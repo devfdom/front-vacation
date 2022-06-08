@@ -1,27 +1,86 @@
-# FrontVacation
+# <img src="src/assets/img/logo.png" width="348">
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+Pet Vacation is a web application developed to make life easier for pet owners when finding a place to go on vacation and take their pets with them.
+It is an application that allows users to rent a property or offer their property for rent.
+We invite you to visit our deploy ;)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Starting 🚀
 
-## Code scaffolding
+- Clone or download Git Repository.
+- Paste or unzip https://github.com/devfdom/pet-vacation
+- Open the intelliJ idea & VS or https://pet-vacation.vercel.app/
+- Enjoy.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+See **Installation** to learn how to deploy the project.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Requeriments 📋
 
-## Running unit tests
+- intelliJ idea.
+- VS Code.
+- MySQL.
+- Browser.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Installation 🔧
 
-## Running end-to-end tests
+- Open intelliJ idea & VS Code.
+- Git clone https://github.com/devfdom/pet-vacation
+- Open-start your mysql GUI.
+- Enjoy.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Coding style tests ⌨️
 
-## Further help
+Verifies the proper functioning of the web with the technologies applied to it.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<!-- # ![Image text](TechEvents/src/main/resources/static/img/screenshots/trello.png) -->
+
+
+## Tools 🛠️
+
+
+* [Trello](https://trello.com/b/LAXZpvTz/123-coders) - Project Organization.
+* [Balsamiq](https://balsamiq.cloud/s5tauor/p75s6vf/rDB97) - Wireframe
+* [Figma](https://www.figma.com/file/uDFYrQYkMYordGhM3zFO60/Wheel-of-doom) - The web framework used.
+* [Visual Studio Code](https://code.visualstudio.com/) - Development environment
+* [Angular](https://angular.io/) - JavaScript Framework
+* [Spring Boot](https://spring.io/projects/spring-boot) - Technology
+* [intelliJ IDEA](https://www.jetbrains.com/es-es/idea/) - Development environment
+* [Git & GitHub](https://github.com) - Keeping track of changes in computer files including coordinating team work.
+* [Vercel](https://vercel.com/) - Build Web Application
+* [Canva](https://www.canva.com/) - Presentations
+* [XAMPP](https://www.apachefriends.org/es/index.html) - BBDD Gestor Windows
+* [TablePlus for MAC](https://tableplus.com/) - BBDD Gestor macOS
+
+
+## Versions 📌
+
+
+For all available versions, see the [tags in this repository](https://github.com/devfdom/pet-vacation).
+
+## Coders ✒️
+
+[Glaucia Mesquita](https://github.com/Glauciagmm)
+
+[Lupe Flores](https://github.com/Lupe13)
+
+[Patricia Muiño](https://github.com/PMuin)
+
+[Elisabeth Ildeeva](https://github.com/ElisabethIld)
+
+[Fran Domínguez](https://github.com/devFdom)
+
+## License 📄
+
+This project is licensed under the (Pet's Family) License - see the file [LICENSE.md](LICENSE.md) for details.
+
+## Thanks 🎁
+
+* Tell others about this project 📢
+* Invite someone from the team to a beer 🍺 or a coffee ☕. If you are very grateful, Audi or BMW 🚗 we accept it too.
+* Give thanks publicly 🤓.
+* etc.
+
+
+
+---
