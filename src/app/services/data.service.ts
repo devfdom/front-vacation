@@ -25,12 +25,12 @@ export class DataService {
       if(offset>0){
         offset *= limit;
       }
-      return this.http.get(`https://pet-vacation.co/api/v2/properties?limit=${limit}&offset=${offset}`)
+      return this.http.get(`https://pet-vacation.co/properties?limit=${limit}&offset=${offset}`)
     }
 
     // Get More Properties from Api
     getMoreData(name: string){
       // return data from Properties we passed as name
-      return this.http.get(`https://pet-vacation.co/api/v2/properties/${name}`);
+      return this.http.get(`https://pet-vacation.co/properties/${name}`);
     }
 }
