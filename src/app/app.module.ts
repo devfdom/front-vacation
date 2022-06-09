@@ -6,6 +6,12 @@ import { AppComponent } from './app.component';
 import { OwnerComponent } from './owner/owner.component';
 import { UserComponent } from './user/user.component';
 
+import { FooterComponent } from './footer/footer.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
