@@ -1,0 +1,6 @@
+.btn-space{
+    justify-content: flex-end;
+    background-color: rgb(187, 147, 224);
+    border-radius: 10px;
+    border-color: rgb(187, 147, 224);
+}
