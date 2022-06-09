@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -19,7 +20,8 @@ import { FooterComponent } from './footer/footer.component';
     HeaderComponent,
     ContactComponent,
     OwnerComponent,
-    UserComponent
+    UserComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -28,9 +30,9 @@ import { FooterComponent } from './footer/footer.component';
       {path:'properties', component:AlladvertiseComponent},
       {path:'contact', component:ContactComponent},
       {path:'owner', component:OwnerComponent},
+      {path: '', component: HomeComponent},
       {path:'user', component:UserComponent}
     ])
-
 
   ],
   providers: [],
