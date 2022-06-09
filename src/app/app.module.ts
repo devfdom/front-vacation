@@ -15,7 +15,7 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path: 'index', component: HomeComponent},
+      {path: '', component: HomeComponent},
     ]),
   ],
   providers: [],
