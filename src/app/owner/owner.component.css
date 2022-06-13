@@ -1,0 +1,23 @@
+.form-control{
+    background-color: #D2BAFF;
+    border: 1px;
+}
+
+.body{
+    background-color: #b6f9ed;
+}
+
+.btn.submit.btn-md {
+    background-color: #D2BAFF;
+    font-family: 'Oswald', sans-serif;
+} 
+
+.button {
+    padding: 3em 1em;
+    cursor: pointer; 
+  
+}
+
+#ownerForm{
+    font-family: 'Oswald', sans-serif;
+}
