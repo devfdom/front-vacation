@@ -5,12 +5,15 @@
   font-family: 'Oswald', sans-serif;
 }
 
-.button {
+.btn {
   background-color: #D2BAFF;
+}
+.btn:hover{
+  background-color: #ffffff;
 }
 
 .submit {
-  color:#ffffff;
+  color:#000000;
 }
 
 *{
