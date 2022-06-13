@@ -1,6 +1,20 @@
-/* .container-social{
-     align-items: center;
-} */
+.container-social{
+    position:absolute;
+    left: 930px;
+}
+
+.mb-3{
+    position:relative;
+    left: 100px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+
+*{
+  background-color: #B6F9ED;
+  font-family: 'Oswald', sans-serif;
+}
 
   .facebook{
     margin: 14px;
