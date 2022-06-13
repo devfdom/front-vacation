@@ -1,6 +1,22 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+*{
+  font-family: 'Oswald', sans-serif;
+}
+
 .button {
   background-color: #D2BAFF;
 }
+
 .submit {
   color:#ffffff;
+}
+
+*{
+border-radius: 10px;
+}
+
+.form-control{
+  background-color: #D2BAFF;
 }
