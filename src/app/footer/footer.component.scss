@@ -1,27 +1,41 @@
-/* .container-social{
-     align-items: center;
-} */
+.container-social{
+    position:absolute;
+    left: 835px;
+}
+
+.mb-3{
+    position:relative;
+    left: 100px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+
+*{
+  background-color: #B6F9ED;
+  font-family: 'Oswald', sans-serif;
+}
 
   .facebook{
     margin: 14px;
   }
 
   .twitter{
-    margin: 5px;
+    margin: 14px;
   }
 
   .instagram{
-    margin: 5px;
+    margin: 14px;
   }
 
   .whatsapp{
-    margin: 5px;
+    margin: 14px;
   }
 
   .github{
-    margin: 5px;
+    margin: 14px;
   }
 
   .email{
-    margin: 5px;
+    margin: 14px;
   }
