@@ -10,12 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OwnerComponent } from './owner/owner.component';
 import { FooterComponent } from './footer/footer.component';
-
-<<<<<<< .merge_file_a22952
-=======
-import { FooterComponent } from './footer/footer.component';
-
->>>>>>> .merge_file_a05596
+import { UserComponent } from './user/user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,18 +32,8 @@ import { FooterComponent } from './footer/footer.component';
       {path: '', component: HomeComponent},
       {path:'user', component:UserComponent}
     ])
-<<<<<<< .merge_file_a22952
-=======
-
->>>>>>> .merge_file_a05596
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-<<<<<<< .merge_file_a22952
-
 export class AppModule { }
-
-=======
-export class AppModule { }
->>>>>>> .merge_file_a05596
