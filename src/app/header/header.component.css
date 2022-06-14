@@ -1,6 +1,55 @@
-.btn-space{
-    justify-content: flex-end;
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+.btn{
     background-color: rgb(187, 147, 224);
     border-radius: 10px;
     border-color: rgb(187, 147, 224);
+    height: 40px;
+    width: 90px;
+    margin-left: 20px;
+    text-align: center;
+
+}
+
+* {
+  font-family: 'Oswald', sans-serif;
+  background-color: #B6F9ED;
+}
+
+.btn-login {
+  color: rgb(0, 0, 0);
+  transition: all 0.5s;
+  position: relative;
+}
+.btn-login::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(255,255,255,0.1);
+  transition: all 0.3s;
+}
+.btn-login:hover::before {
+  opacity: 0 ;
+  transform: scale(0.5,0.5);
+}
+.btn-login::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid rgba(255,255,255,0.5);
+  transform: scale(1.2,1.2);
+}
+.btn-login:hover::after {
+  opacity: 1;
+  transform: scale(1,1);
 }
