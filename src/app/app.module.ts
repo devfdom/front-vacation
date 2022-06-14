@@ -1,4 +1,5 @@
-import { NgModule, Component } from '@angular/core';
+import { HomeComponent } from './home/home.component';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AlladvertiseComponent } from './alladvertise/alladvertise.component';
@@ -10,6 +11,11 @@ import { AppComponent } from './app.component';
 import { OwnerComponent } from './owner/owner.component';
 import { FooterComponent } from './footer/footer.component';
 
+<<<<<<< .merge_file_a22952
+=======
+import { FooterComponent } from './footer/footer.component';
+
+>>>>>>> .merge_file_a05596
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,10 +37,18 @@ import { FooterComponent } from './footer/footer.component';
       {path: '', component: HomeComponent},
       {path:'user', component:UserComponent}
     ])
+<<<<<<< .merge_file_a22952
+=======
+
+>>>>>>> .merge_file_a05596
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+<<<<<<< .merge_file_a22952
 
 export class AppModule { }
 
+=======
+export class AppModule { }
+>>>>>>> .merge_file_a05596
