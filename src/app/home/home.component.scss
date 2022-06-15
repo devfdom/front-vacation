@@ -5,7 +5,9 @@
 }
 
 body{
-  padding-bottom: 150px;
+
+  position: sticky;
+  line-height:0;
 }
 
 .card {
@@ -16,7 +18,7 @@ body{
 }
 
 .card-group {
-  margin-right: 14.5%;
+  margin-right: 10%;
 }
 
 .card:hover {
