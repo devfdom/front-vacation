@@ -1,6 +1,26 @@
-.btn-space{
-    justify-content: flex-end;
-    background-color: rgb(187, 147, 224);
-    border-radius: 10px;
-    border-color: rgb(187, 147, 224);
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+.button{
+  background-color: rgb(187, 147, 224);
+  border-radius: 10px;
+  border-color: rgb(187, 147, 224);
+  width: auto;
+  font-size: 20px;
+
 }
+
+* {
+  font-family: 'Oswald', sans-serif;
+  background-color: #B6F9ED;
+}
+
+.navbar-brand {
+
+  margin-left: 5%;
+}
+
+
+.nav-link{
+  font-size: larger;
+}
+
