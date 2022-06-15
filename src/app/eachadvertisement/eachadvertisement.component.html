@@ -1,0 +1,56 @@
+<div class="container">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+    </style>
+        <h1 style="text-align: center; color: #290981; font-family: 'Dancing Script', cursive;">To Rent</h1>
+    <br>
+    <!--<h2>Products</h2>
+        <div>
+          <img src="../src/assets/img/eachhome.png" class="img-thumbnail" alt="...">  
+        </div>
+    
+
+    <div *ngFor="let product">
+    
+      <h3>
+        <a [title]="product.name + ' details'">
+          {{ product.name }}
+        </a>
+      </h3>
+    
+      <p *ngIf="product.description">
+        Description: {{ product.description }}
+      </p>-->
+    
+      <div class="row">
+        <div class="col-sm-6">
+            <div class="card-body">
+              <img alt="..." src = "{{itemImageUrl}}">
+            </div>
+        </div>
+        <div class="col-sm-6">
+          <!--<div class="card">-->
+            <div class="card-body">
+              <h5 class="card-title">Type: {{type}}</h5>
+              <h5 class="card-title">City: {{city}}</h5>
+              <h5 class="card-title">Bedrooms: {{bedrooms}}</h5>
+              <h5 class="card-title">Capacity: {{capacity}}</h5>
+              <h5 class="card-title">Swimming pool: {{pool}}</h5>
+              <h5 class="card-title">Garden: {{garden}}</h5>
+              <p class="card-text">{{text}}</p>
+            </div>
+          <!--</div>-->
+        </div>
+      </div>
+    <div>
+        <div class="button">
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-outline-secondary btn-primary" type="button" id="button-addon2">Booking</button>
+            </div>
+        </div>
+    </div>
+</div>
