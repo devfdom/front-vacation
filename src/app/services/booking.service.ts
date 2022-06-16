@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Booking } from '../model/booking';
-import { BookingItem } from '../model/bookingItem';
+import { BookingItem } from '../model/bookingitem';
 import { Properties } from '../model/properties';
 
 @Injectable({

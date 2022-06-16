@@ -24,4 +24,9 @@ export class DataService {
     public registerUser(user:User):Observable<User>{
       return this.http.post<User>(`${this.apiServerUrl}/petvacation/users/save`, user)
     }
+
+    public registerpROPERTY(properties:Properties):Observable<Properties>{
+      return this.http.post<Properties>(`${this.apiServerUrl}/petvacation/properties/create`, properties)
+    }
 }
+

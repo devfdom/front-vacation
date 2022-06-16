@@ -1,4 +1,4 @@
-import { BookingItem } from './bookingItem';
+import { BookingItem } from './bookingitem';
 
 
 export class Booking{
