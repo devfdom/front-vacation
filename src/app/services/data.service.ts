@@ -2,35 +2,26 @@ import { Injectable } from '@angular/core';
 
 // Import HttpClient and add it to constructor
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment.prod';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
+  private apiServerUrl = environment.apiBaseUrl;
+
   constructor(
     private http: HttpClient
     ) { }
 
-    // Get Properties from API
-    // limit: number of Properties
-    // offset: the Properties "page"
-    // api will return first page, then second, third, etc
-    // This is how api works and how we use it on our app
-    getProperties(limit: number, offset: number){
-      // connect to the api requesting just 10 Properties
-      // that is how this api is built
-      // If it's the first page, return normally.
-      // If not, multiply by "limit" to skip previous page Properties
-      if(offset>0){
-        offset *= limit;
-      }
-      return this.http.get(`https://pet-vacation.co/properties?limit=${limit}&offset=${offset}`)
+    
+    getProperties(): Observable<Properties[]>{
+       return this.http.get<Properties[]>(`${this.apiServerUrl}/petvacation/properties`);
     }
 
-    // Get More Properties from Api
-    getMoreData(name: string){
-      // return data from Properties we passed as name
-      return this.http.get(`https://pet-vacation.co/properties/${name}`);
+    public registerUser(user:User):Observable<User>{
+      return this.http.post<User>(`${this.apiServerUrl}/petvacation/users/save`, user)
     }
 }

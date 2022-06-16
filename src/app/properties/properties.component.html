@@ -1,0 +1,14 @@
+<div class="AllProperties-grid">
+        <!-- ngFor through all pokemons that we have -->
+        <!--  and we use the pipe to paginate the results with the variables we created -->
+    <div class="box" *ngFor="let properties of properties">
+        <img [src]="properties.sprites.front_default" alt="...">
+        <h3>{{ properties.city }}</h3>
+        <p>
+            <b>Type: </b>
+                {{ properties.capacity[0].type.capacity }}
+                {{ properties.bedrooms[0].type.bedrooms }}
+                {{ properties.pricePerNight[0].type.pricePerNight }}
+        </p>    
+        </div>
+</div>

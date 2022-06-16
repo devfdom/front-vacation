@@ -1,21 +1,25 @@
-import { RouterModule } from '@angular/router';
-import { AlladvertiseComponent } from './alladvertise/alladvertise.component';
-import { NgModule, Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { BookingComponent } from './booking/booking.component';
+import { PropertiesComponent } from './properties/properties.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PropertiesComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot([{
-      path:'properties', component:AlladvertiseComponent
-    }])
+    RouterModule.forRoot([
+      {path:'properties', component:PropertiesComponent},
+      {path:'booking', component:BookingComponent}
+    ])
     
   ],
   providers: [],
