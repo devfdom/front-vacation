@@ -3,7 +3,7 @@
 
 <!-- Wrapper container -->
 <div class="container d-grid gap-5 col-4 p-3 mx-auto">
-  <h1 style="text-align: center; color: #290981; font-family: 'Dancing Script', cursive; width: auto">Share a New Property</h1>
+  <h1 style="text-align: center; color: #290981; font-family: 'Dancing Script', cursive; width: 100%">Share a New Property</h1>
   <!-- Bootstrap 5 starter form -->
   <form id="ownerForm">
     <!-- City input -->
@@ -12,16 +12,10 @@
       <input class="form-control" id="city" type="text" placeholder="City" />
     </div>
 
-    <!-- Property type -->
-    <div class="mb-3">
-      <label class="form-label" for="propertyType">Property Type</label>
-      <input class="form-control" id="propertyType" type="text" placeholder="PropertyType" />
-    </div>
-
     <!-- Bedrooms -->
     <div class="mb-3">
       <label class="form-label" for="bedrooms">Bedrooms</label>
-      <input class="form-control" id="bedrooms" type="text" placeholder="Bedrooms" />
+      <input class="form-control" id="bedrooms" type="number" placeholder="Bedrooms" />
     </div>
 
     <!-- Capacity -->
@@ -32,20 +26,14 @@
 
     <!-- Swimming pool -->
     <div class="mb-3">
-      <label class="form-label" for="swimmingPool">Swimming pool</label>
-      <input class="form-control" id="swimmingPool" type="text" placeholder="SwimmingPool" />
+      <label class="form-label" for="swimmingPool">Pool</label>
+      <input class="form-control" id="Pool" type="text" placeholder="Yes/No" />
     </div>
 
     <!-- Garden -->
     <div class="mb-3">
       <label class="form-label" for="garden">Garden</label>
-      <input class="form-control" id="garden" type="text" placeholder="Garden" />
-    </div>
-
-    <!-- Available -->
-    <div class="mb-3">
-      <label class="form-label" for="available">Available</label>
-      <input class="form-control" id="available" type="text" placeholder="Available" />
+      <input class="form-control" id="garden" type="text" placeholder="Yes/No" />
     </div>
 
     <!-- Photo -->
@@ -58,6 +46,12 @@
     <div class="mb-3">
       <label class="form-label" for="description">Description</label>
       <textarea class="form-control" id="description" type="text" placeholder="Description" style="height: 5rem;"></textarea>
+    </div>
+
+    <!-- Price/night -->
+    <div class="mb-3">
+      <label class="form-label" for="pricePerNight">Price per Night</label>
+      <input class="form-control" id="pricePerNight" type="number" placeholder="PricePerNight">
     </div>
 
     <!-- Form submit button -->
