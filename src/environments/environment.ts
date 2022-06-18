@@ -1,5 +1,5 @@
 import { Properties } from './../app/model/properties';
 export const environment = {
-  Properties: false,
+  production: false,
   apiBaseUrl: 'http://localhost:8080'
 };

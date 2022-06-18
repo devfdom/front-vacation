@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { BookingService } from './../services/booking.service';
 import { Booking } from './../model/booking';
 import { Component, OnInit } from '@angular/core';
@@ -14,10 +15,10 @@ export class BookingComponent implements OnInit {
   constructor( private bookingService: BookingService) { }
 
   ngOnInit(): void {
-    this.getBookings();
+   /* this.getBookings();*/
   }
 
-  public getBookings(): void{
+  /*public getBookings(): void{
     this.bookingService.getAllBookings().subscribe({
       next: (response: Booking[]) => {
         this.booking = response;
@@ -27,5 +28,5 @@ export class BookingComponent implements OnInit {
         alert(error.message);
       }
     })
-  }
+  }*/
 }

@@ -4,7 +4,7 @@ import { Booked } from "./booked";
 export interface Properties{
     id: number;
     photo: string;
-    beedrooms: number;
+    bedrooms: number;
     capacity: number;
     city: number;
     garden: boolean;

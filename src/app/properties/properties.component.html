@@ -1,14 +1,12 @@
-<div class="AllProperties-grid">
-    <div class="box" *ngFor="let properties of properties">
-        <img [src]="properties.sprites.front_default" alt="...">
-        <p>
-            {{ properties.capacity[0].type.capacity }}Capacity
-        </p>   
-        <p>
-            {{ properties.bedrooms[0].type.bedrooms }} Bedrooms
-        </p> 
-        <p>
-        {{ properties.pricePerNight[0].type.pricePerNight }}€ (Price Per Night)
-        </p>  
-    </div>
+<div class="box" *ngFor="let properties of properties">
+    <img [src]="" alt="...">
+    <p>
+        Capacity: {{properties.capacity}}
+    </p>
+    <p>
+        Bedrooms:{{properties.bedrooms}}
+    </p>
+    <p>
+        {{properties.pricePerNight}}€ (Price Per Night)
+    </p>
 </div>

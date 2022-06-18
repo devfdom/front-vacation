@@ -13,9 +13,9 @@ export class PropertiesComponent implements OnInit {
 
   //Array to store our properties data 
   public properties: Properties[] = [];
-  page = 1;
+  /*page = 1;
   propertiesToGet: number = 9;
-  totalProperties: number | undefined;
+  totalProperties: number | undefined;*/
 
   constructor(private propertiesService: PropertiesService) { }
 
@@ -25,18 +25,14 @@ export class PropertiesComponent implements OnInit {
   
   public getProperties(): void {
     // Launch getProperties on init
-    this.propertiesService.getProperties()
-    .subscribe((response: Properties[]) => {
-      // save the amount of properties we get from api into the variable
-      this.properties = response;
-      console.log(this.properties)
-    },
-    /*error: (error: HttpErrorResponse) => {
-      alert(error.message);
-    }*/
-  )};
+    this.propertiesService.getProperties().subscribe({
+      next: (response: Properties[]) => {
+        this.properties = response;
+        console.log(this.properties);
+      },
+      error: (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    })
+  }
 }
-
-
-
-
