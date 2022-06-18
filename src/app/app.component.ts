@@ -1,3 +1,4 @@
+import { PropertiesService } from './services/properties.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'front-vacation';
+
+  constructor( private propertiesService: PropertiesService){
+   
+  }
 }

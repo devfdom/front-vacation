@@ -1,5 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
+import { Properties } from './../model/properties';
 import { Component, OnInit } from '@angular/core';
-import {DataService} from '../services/data.service';
+import {PropertiesService} from '../services/properties.service';
+
 
 @Component({
   selector: 'app-properties',
@@ -11,25 +14,26 @@ export class PropertiesComponent implements OnInit {
   //Array to store our properties data 
   public properties: Properties[] = [];
   page = 1;
-  propertiesToGet: number = 10;
+  propertiesToGet: number = 9;
   totalProperties: number | undefined;
 
-  constructor(private dataService: DataService) { }
+  constructor(private propertiesService: PropertiesService) { }
 
   ngOnInit(): void {
     this.getProperties();
   }
-  getProperties(){
+  
+  public getProperties(): void {
     // Launch getProperties on init
-    this.dataService.getProperties()
+    this.propertiesService.getProperties()
     .subscribe((response: Properties[]) => {
       // save the amount of properties we get from api into the variable
       this.properties = response;
       console.log(this.properties)
     },
-    error: (error: HttpErrorResponse) => {
+    /*error: (error: HttpErrorResponse) => {
       alert(error.message);
-    },
+    }*/
   )};
 }
 

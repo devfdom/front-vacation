@@ -8,12 +8,14 @@ import { PropertiesComponent } from './properties/properties.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { FiltersComponent } from './filters/filters.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PropertiesComponent,
-    BookingComponent
+    BookingComponent,
+    FiltersComponent
   ],
   imports: [
     BrowserModule,
