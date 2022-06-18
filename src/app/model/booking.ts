@@ -2,7 +2,6 @@ import { BookingItem } from './bookingitem';
 
 
 export class Booking{
-
     items:BookingItem[]=[];
     get totalPrice():number{
         let totalPrice=0;

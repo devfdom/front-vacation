@@ -9,7 +9,7 @@ import {DataService} from '../services/data.service';
 export class PropertiesComponent implements OnInit {
 
   //Array to store our properties data 
-  public properties: properties[] = [];
+  public properties: Properties[] = [];
   page = 1;
   propertiesToGet: number = 10;
   totalProperties: number | undefined;
@@ -22,10 +22,10 @@ export class PropertiesComponent implements OnInit {
   getProperties(){
     // Launch getProperties on init
     this.dataService.getProperties()
-    .subscribe((response: properties[]) => {
+    .subscribe((response: Properties[]) => {
       // save the amount of properties we get from api into the variable
       this.properties = response;
-      console.log("TOTAL PROPERTIES: " + this.properties)
+      console.log(this.properties)
     },
     error: (error: HttpErrorResponse) => {
       alert(error.message);

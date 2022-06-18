@@ -1,3 +1,5 @@
+import { User } from './../model/user';
+import { Properties } from './../model/properties';
 import { Injectable } from '@angular/core';
 
 // Import HttpClient and add it to constructor
