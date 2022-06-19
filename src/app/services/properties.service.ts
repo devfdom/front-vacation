@@ -1,22 +1,43 @@
+import { Properties } from './../model/properties';
 import { User } from '../model/user';
-import { Properties } from '../model/properties';
 import { Injectable } from '@angular/core';
 
 // Import HttpClient and add it to constructor
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PropertiesService {
 
+  private handleError(error: HttpErrorResponse): any {
+    if (error.error instanceof ErrorEvent) {
+      console.error('An error occurred:', error.error.message);
+    } else {
+      console.error(
+        `Backend returned code ${error.status}, ` +
+        `body was: ${error.error}`);
+    }
+    return throwError(
+      'Something bad happened; please try again later.');
+  }
+
+  private extractData(res: Response): any {
+    const body = res;
+    return body || { };
+  }
+
   private apiServerUrl = environment.apiBaseUrl; 
 
   constructor( private http: HttpClient) { 
     console.log('Properties Services')
   }
+
+  
 
     
     getProperties():Observable<Properties[]>{
@@ -26,14 +47,53 @@ export class PropertiesService {
       return this.http.get(this.apiServerUrl, {
         headers:header});*/
     }
-
-    public registerUser(user:User):Observable<User>{
-      return this.http.post<User>(`${this.apiServerUrl}/petvacation/users/save`, user)
-    }
-
+ 
+    //this one and the next should do the same thing - Create a new property 
     public registerProperty(properties:Properties):Observable<Properties>{
-      return this.http.post<Properties>(`${this.apiServerUrl}/petvacation/properties/create`, properties)
+      return this.http.post<Properties>(`${this.apiServerUrl}/petvacation/properties/create`, properties);
     }
+
+    public addProperty(properties:any):Observable<any>{
+      return this.http.post<Properties>(`${this.apiServerUrl}/petvacation/properties/create`, properties).pipe(
+        catchError(this.handleError)
+      );
+    }
+
+    //this one and the next should do the same thing - Find property by Id
+    public idProperty():Observable<Properties>{
+      return this.http.get<Properties>(`${this.apiServerUrl}/petvacation/properties/`);
+    }
+
+    getProperty(id: number): Observable<any> {
+      return this.http.get(`${this.apiServerUrl}/petvacation/properties/`).pipe(
+        catchError(this.handleError)
+      );
+    }
+
+    //Edit property
+    updateProperty(id: number, properties: Properties): Observable<any> {
+      return this.http.put<Properties>(`${this.apiServerUrl}/petvacation/properties/`, properties).pipe(
+        catchError(this.handleError)
+      );
+    }
+
+    //Delete property
+    deleteProperty(id: number): Observable<any> {
+      return this.http.delete<Properties>(`${this.apiServerUrl}/petvacation/properties/delete/`).pipe(
+        catchError(this.handleError)
+      );
+    }
+
+    /*
+    public registerUser(user:User):Observable<User>{
+      return this.http.post<Properties>(`${this.apiServerUrl}/petvacation/user/save`, user);
+    }
+
+    public removeUser(user:User):Observable<User>{
+      return this.http.post<User>(`${this.apiServerUrl}/petvacation/user/delete/`, user);
+    }*/
+
+
 
 }
 

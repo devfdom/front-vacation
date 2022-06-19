@@ -1,10 +1,36 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { PropertiesComponent } from "./properties/properties.component";
+import { PropertiesDetailComponent } from "./properties-detail/properties-detail.component";
+import { PropertiesAddComponent } from "./properties-add/properties-add.component";
+import { PropertiesEditComponent } from "./properties-edit/properties-edit.component";
+import { Routes } from "@angular/router";
 
-const routes: Routes = [];
-
+const routes: Routes = [
+  {
+    path: "properties",
+    component: PropertiesComponent,
+    data: { title: "Properties List" },
+  },
+  {
+    path: "Properties-details/:id",
+    component: PropertiesDetailComponent,
+    data: { title: "Properties Details" },
+  },
+  {
+    path: "Properties-add",
+    component: PropertiesAddComponent,
+    data: { title: "Properties Add" },
+  },
+  {
+    path: "Properties-edit/:id",
+    component: PropertiesEditComponent,
+    data: { title: "Properties Edit" },
+  },
+  { path: "", redirectTo: "/properties", pathMatch: "full" },
+];
+/*
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+  exports: [RouterModule],
+})*/
+export class AppRoutingModule {}

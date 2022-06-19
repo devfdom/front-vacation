@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Booking } from '../model/booking';
 import { BookingItem } from '../model/bookingitem';
+import { User } from '../model/user';
 import { Properties } from '../model/properties';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { Properties } from '../model/properties';
   })
   export class BookingService {
     public booking:Booking = new Booking();
-    public addToBooking(properties:Properties):void{
+    public addToBooking(properties:User):void{
         let bookingItem= this.booking.items.find(item=>item.properties.id===properties.id)
         
         if(bookingItem){
