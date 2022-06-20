@@ -1,11 +1,11 @@
-import { User } from "./properties";
+import { Properties} from "./properties";
 
 export class BookingItem{
-    constructor(properties:User){
+    constructor(properties:Properties){
         this.properties=properties;
         this.pricePerNight;
     }
-    properties:User;
+    properties:Properties;
     quantity:number=1;
     get pricePerNight():number{
        return this.properties.pricePerNight*this.quantity;

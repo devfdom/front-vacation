@@ -36,10 +36,7 @@ export class PropertiesService {
   constructor( private http: HttpClient) { 
     console.log('Properties Services')
   }
-
-  
-
-    
+ 
     getProperties():Observable<Properties[]>{
       return this.http.get<Properties[]>(`${this.apiServerUrl}/petvacation/properties`);
       /*let header = new HttpHeaders()
@@ -60,26 +57,26 @@ export class PropertiesService {
     }
 
     //this one and the next should do the same thing - Find property by Id
-    public idProperty():Observable<Properties>{
-      return this.http.get<Properties>(`${this.apiServerUrl}/petvacation/properties/`);
+    public idProperty(id: number):Observable<Properties>{
+      return this.http.get<Properties>(`${this.apiServerUrl}/petvacation/properties/${id}`);
     }
 
     getProperty(id: number): Observable<any> {
-      return this.http.get(`${this.apiServerUrl}/petvacation/properties/`).pipe(
+      return this.http.get(`${this.apiServerUrl}/petvacation/properties/${id}`).pipe(
         catchError(this.handleError)
       );
     }
 
     //Edit property
     updateProperty(id: number, properties: Properties): Observable<any> {
-      return this.http.put<Properties>(`${this.apiServerUrl}/petvacation/properties/`, properties).pipe(
+      return this.http.put<Properties>(`${this.apiServerUrl}/petvacation/properties/${id}`, properties).pipe(
         catchError(this.handleError)
       );
     }
 
     //Delete property
     deleteProperty(id: number): Observable<any> {
-      return this.http.delete<Properties>(`${this.apiServerUrl}/petvacation/properties/delete/`).pipe(
+      return this.http.delete<Properties>(`${this.apiServerUrl}/petvacation/properties/delete/${id}`).pipe(
         catchError(this.handleError)
       );
     }

@@ -1,7 +1,12 @@
-<router-outlet></router-outlet>
-<h1>Properties API</h1>
+
+<!-- 
+    <router-outlet></router-outlet>
+    <app-properties></app-properties> -->
+
+<app-properties-detail></app-properties-detail>
+ <h1>Properties API</h1>
 <div class="box" *ngFor="let properties of properties">
-    <img [src]="" alt="...">
+    <img src="{{properties.photo}}" alt="...">
     <p>
         Capacity: {{properties.capacity}}
     </p>

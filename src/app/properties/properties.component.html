@@ -1,4 +1,4 @@
-<div class="box" *ngFor="let properties of properties">
+<!--<div class="box" *ngFor="let properties of properties">
     <img [src]="" alt="...">
     <p>
         Capacity: {{properties.capacity}}
@@ -10,3 +10,23 @@
         {{properties.pricePerNight}}€ (Price Per Night)
     </p>
 </div>
+
+ <h2>Properties</h2>
+
+<div>
+  <button (click)="add()">
+    Add
+  </button>
+</div> -->
+
+<!-- <ul class="prodperties">
+  <li *ngFor="let p of properties; let i=index;">
+    <a routerLink="/property-details/{{p.id}}">
+      <span class="badge">{{i+1}}</span> {{p.property.id}}
+    </a>
+    <button class="delete" title="delete property"
+      (click)="delete(p._id)">x</button>
+  </li>
+</ul> -->
+
+<app-properties-detail></app-properties-detail>

@@ -12,25 +12,29 @@ const routes: Routes = [
     data: { title: "Properties List" },
   },
   {
-    path: "Properties-details/:id",
+    path: "properties-details/:id",
     component: PropertiesDetailComponent,
     data: { title: "Properties Details" },
   },
   {
-    path: "Properties-add",
+    path: "properties-add",
     component: PropertiesAddComponent,
     data: { title: "Properties Add" },
   },
   {
-    path: "Properties-edit/:id",
+    path: "properties-edit/:id",
     component: PropertiesEditComponent,
     data: { title: "Properties Edit" },
   },
   { path: "", redirectTo: "/properties", pathMatch: "full" },
 ];
-/*
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-})*/
-export class AppRoutingModule {}
+
+// @NgModule({
+
+  
+//   // imports: [RouterModule.forRoot(routes)],
+//   // exports: [RouterModule],
+// })
+// export class AppRoutingModule {
+  
+// }

@@ -1,11 +1,17 @@
-<div *ngIf="product" class="products">
-    <h2>{{product.prod_name | uppercase}} Details</h2>
-    <div><span>Description: </span>{{product.prod_desc}}</div>
-    <div><span>Price: </span>{{product.prod_price}}</div>
-    <div><span>Update Date: </span>{{product.updated_at | date}}</div>
-    <div>
-      <button routerLink="/product-edit/{{product._id}}">
-        Edit
-      </button>
-    </div>
+<div class="card-body">
+  <img [src]="" alt="...">
+  <h5 class="card-title">City: {{properties?.city}}</h5>
+  <h5 class="card-title">Bedrooms: {{properties?.bedrooms}}</h5>
+  <h5 class="card-title">Capacity: {{properties?.capacity}}</h5>
+  <h5 class="card-title">Swimming pool: {{properties?.pool}}</h5>
+  <h5 class="card-title">Garden: {{properties?.garden}}</h5>
+  <p class="card-text">Description: {{properties?.description}}</p>
+  <div>
+    <button routerLink="/properties-edit/{{properties?.id}}">
+      Edit
+    </button>
+    <button routerLink="/properties-edit/{{properties?.id}}">
+      Book
+    </button>
   </div>
+</div>+

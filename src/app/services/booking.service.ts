@@ -8,19 +8,20 @@ import { Properties } from '../model/properties';
     providedIn: 'root'
   })
   export class BookingService {
+    
     public booking:Booking = new Booking();
-    public addToBooking(properties:User):void{
+    public addToBooking(properties:Properties):void{
         let bookingItem= this.booking.items.find(item=>item.properties.id===properties.id)
         
-        if(bookingItem){
-            this.changeQuantity(properties.id, bookingItem.quantity+1)
-            return;
-        }
+        // if(bookingItem){
+        //     this.changeQuantity(properties.id, bookingItem.quantity+1)
+        //     return;
+        // }
         this.booking.items.push(new BookingItem(properties));
         this.localStorageSaveBooking();
         
     }
-    removeFromBooking(propertiesId:Number):void{
+    removeFromBooking(propertiesId:number):void{
         this.booking.items=this.booking.items.filter(item=>
             item.properties.id !=propertiesId);
             this.localStorageSaveBooking();
