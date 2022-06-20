@@ -1,4 +1,3 @@
-import { Properties } from './model/properties';
 import { Component } from "@angular/core";
 import { PropertiesService } from "./services/properties.service";
 

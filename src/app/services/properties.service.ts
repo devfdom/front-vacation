@@ -14,11 +14,11 @@ export class PropertiesService {
 
   private apiServerUrl = environment.apiBaseUrl; 
 
-  constructor( private http: HttpClient) { 
+  constructor( private http: HttpClient) {
     console.log('Properties Services')
   }
 
-    
+
     getProperties():Observable<Properties[]>{
       return this.http.get<Properties[]>(`${this.apiServerUrl}/petvacation/properties`);
       /*let header = new HttpHeaders()
