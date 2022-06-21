@@ -1,3 +1,4 @@
+import { BookingComponent } from './booking/booking.component';
 import { NgModule } from "@angular/core";
 import { PropertiesComponent } from "./properties/properties.component";
 import { PropertiesDetailComponent } from "./properties-detail/properties-detail.component";

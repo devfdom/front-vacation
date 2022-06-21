@@ -14,7 +14,7 @@ export class PropertiesEditComponent implements OnInit {
   properties: Properties | undefined;
   propertyId: number = 1;
 
-  @Input() propertiesData: any = { properties_city: '', properties_bedrooms: 0, properties_capacity: 0, properties_poll: false, properties_garden: false, properties_description:'', properties_pricePerNight: 0,};
+  @Input() propertiesData: any = {properties_photo:'', properties_city: '', properties_bedrooms: 0, properties_capacity: 0, properties_pool: false, properties_garden: false, properties_description:'', properties_pricePerNight: 0,};
 
   constructor(public prop: PropertiesService, private route: ActivatedRoute, private router: Router) { }
 
@@ -35,11 +35,13 @@ export class PropertiesEditComponent implements OnInit {
     );   
   }
 
-  // updateProperty(id: number){
-  //   this.prop.updateProperty(this.propertyId), this.propertiesData).subscribe((result) => {
-  //     this.router.navigate(['/properties-details/' + result._id]);
-  //   }, (err) => {
-  //     console.log(err);
-  //   });
-  // }
+   updateProperty(): void{
+    this.prop.updateProperty(this.propertyId, this.propertiesData).subscribe((result) => {
+       this.router.navigate(['/properties-edit/',result._id]);
+    }, (err) => {
+      console.log(err);
+    });
+   }
 } 
+
+
