@@ -1,3 +1,4 @@
+import { Properties } from './model/properties';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
@@ -5,11 +6,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterCitiesPipe implements PipeTransform {
 
-  transform(items: Array<City>, categoryToSearch: string =''): Array<any> {
-    console.log()
-
-    return (items);
+  transform(properties: Properties[], filterText: String){
+    if(properties.length === 0 || filterText === ''){
+      return properties;
+    } else {
+      return properties.filter((properties) =>
+      {
+        return properties.City.toLowerCase() === filterText.toLowerCase()
+      })
+    }
   }
-  return items.filter(({ City }) => City === CityToSearch);
-
 }
