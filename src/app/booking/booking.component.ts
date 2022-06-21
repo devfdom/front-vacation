@@ -16,10 +16,10 @@ export class BookingComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBookings();
-  }
+}
 
   public getBookings(): void{
-    this.bookingService.getAllBookings().subscribe({
+    this.bookingService.getAllBookings().subscribe ({
       next: (response: Booking[]) => {
         this.booking = response;
         console.log(this.booking);
