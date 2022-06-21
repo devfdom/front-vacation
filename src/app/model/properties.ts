@@ -11,7 +11,7 @@ export interface Properties{
     city: number;
     garden: boolean;
     pool: boolean;
-    desciption: string;
+    description: string;
     pricePerNight: number;
     booked: Booked;
 }

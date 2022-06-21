@@ -1,4 +1,4 @@
-import { Properties } from "./properties";
+import { Properties} from "./properties";
 
 export class BookingItem{
     constructor(properties:Properties){

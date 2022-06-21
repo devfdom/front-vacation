@@ -1,4 +1,5 @@
-import { Properties } from "./properties";
+import { Properties } from './properties';
+
 import { User } from "./user";
 
 export interface Booked {

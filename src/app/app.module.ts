@@ -5,20 +5,26 @@ import { ContactComponent } from "./contact/contact.component";
 import { FilterCityPipe } from "./filter-city.pipe";
 import { HomeComponent } from "./home/home.component";
 
-import { AppRoutingModule } from "./app-routing.module";
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from "./app.component";
 import { OwnerComponent } from "./owner/owner.component";
 import { UserComponent } from "./user/user.component";
 
-import { HttpClientModule } from "@angular/common/http";
-import { BookingComponent } from "./booking/booking.component";
+import { FormsModule } from '@angular/forms';
+
+import { BookingComponent } from './booking/booking.component';
+import { FiltersComponent } from './filters/filters.component';
+import { PropertiesAddComponent } from './properties-add/properties-add.component';
+import { PropertiesDetailComponent } from './properties-detail/properties-detail.component';
+import { PropertiesEditComponent } from './properties-edit/properties-edit.component';
+import { PropertiesComponent } from './properties/properties.component';
+
+
 import { FooterComponent } from "./footer/footer.component";
 import { HeaderComponent } from "./header/header.component";
-import { PropertiesComponent } from "./properties/properties.component";
 
-import { FormsModule } from "@angular/forms";
 import { FilterDatePipe } from "./filter-date.pipe";
-import { FiltersComponent } from "./filters/filters.component";
+
 
 @NgModule({
   declarations: [
@@ -34,12 +40,16 @@ import { FiltersComponent } from "./filters/filters.component";
     FiltersComponent,
     FilterDatePipe,
     FilterCityPipe,
+    PropertiesAddComponent,
+    PropertiesDetailComponent,
+    PropertiesEditComponent,
+
+    //maybe I should put the PropertiesDeteil and Edit here
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule,
     RouterModule.forRoot([
       { path: "contact", component: ContactComponent },
       { path: "owner", component: OwnerComponent },
@@ -47,7 +57,12 @@ import { FiltersComponent } from "./filters/filters.component";
       { path: "user", component: UserComponent },
       { path: "properties", component: PropertiesComponent },
       { path: "booking", component: BookingComponent },
-    ]),
+      {path:'properties', component:PropertiesComponent},
+      {path:'propertiesAdd', component:PropertiesAddComponent},
+      {path:'propertiesDetail', component:PropertiesDetailComponent},
+      {path:'propertiesEdit', component:PropertiesEditComponent},
+      {path:'booking', component:BookingComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent],
