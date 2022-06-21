@@ -62,21 +62,21 @@ export class UserService {
     }
 
     getuser(id: number): Observable<any> {
-      return this.http.get(`${this.apiServerUrl}/petvacation/user/`+ id).pipe(
+      return this.http.get(`${this.apiServerUrl}/petvacation/user/${id}`).pipe(
         catchError(this.handleError)
       );
     }
 
     //Edit user
     updateUser(id: number, user: User): Observable<any> {
-      return this.http.put<User>(`${this.apiServerUrl}/petvacation/user/` + id, user).pipe(
+      return this.http.put<User>(`${this.apiServerUrl}/petvacation/user/${id}`, user).pipe(
         catchError(this.handleError)
       );
     }
 
     //Delete user
     deleteUser(id: number): Observable<any> {
-      return this.http.delete<User>(`${this.apiServerUrl}/petvacation/user/delete/` + id).pipe(
+      return this.http.delete<User>(`${this.apiServerUrl}/petvacation/user/delete/${id}`).pipe(
         catchError(this.handleError)
       );
     }
@@ -86,10 +86,8 @@ export class UserService {
     }*/
 
     public removeUser(user:User):Observable<User>{
-      return this.http.post<User>(`${this.apiServerUrl}/petvacation/users/delete/`, user);
+      return this.http.post<User>(`${this.apiServerUrl}/petvacation/user/delete/username`, user);
     }
-
-
 
 }
 

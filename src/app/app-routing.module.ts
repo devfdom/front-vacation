@@ -27,6 +27,12 @@ const routes: Routes = [
     data: { title: "Properties Edit" },
   },
   { path: "", redirectTo: "/properties", pathMatch: "full" },
+  {
+    path: "booking",
+    component: BookingComponent,
+    data: { title: "Booking List" },
+  },
+  
 ];
 
 // @NgModule({

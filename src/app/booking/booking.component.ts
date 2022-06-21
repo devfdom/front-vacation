@@ -15,10 +15,10 @@ export class BookingComponent implements OnInit {
   constructor( private bookingService: BookingService) { }
 
   ngOnInit(): void {
-   /* this.getBookings();*/
+    this.getBookings();
   }
 
-  /*public getBookings(): void{
+  public getBookings(): void{
     this.bookingService.getAllBookings().subscribe({
       next: (response: Booking[]) => {
         this.booking = response;
@@ -28,5 +28,5 @@ export class BookingComponent implements OnInit {
         alert(error.message);
       }
     })
-  }*/
+  }
 }
