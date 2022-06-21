@@ -14,7 +14,6 @@ import { PropertiesEditComponent } from './properties-edit/properties-edit.compo
 import { BookingComponent } from './booking/booking.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +23,7 @@ import { BookingComponent } from './booking/booking.component';
     PropertiesAddComponent,
     PropertiesDetailComponent,
     PropertiesEditComponent,
-  
+
     //maybe I should put the PropertiesDeteil and Edit here
   ],
   imports: [
@@ -32,16 +31,14 @@ import { BookingComponent } from './booking/booking.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      {path:'properties', component:PropertiesComponent},
-      {path:'propertiesAdd', component:PropertiesAddComponent},
-      {path:'propertiesDetail', component:PropertiesDetailComponent},
-      {path:'propertiesEdit', component:PropertiesEditComponent},
-      {path:'booking', component:BookingComponent}
-    ])
+      { path: "properties", component: PropertiesComponent },
+      { path: "propertiesAdd", component: PropertiesAddComponent },
+      { path: "propertiesDetail", component: PropertiesDetailComponent },
+      { path: "propertiesEdit", component: PropertiesEditComponent },
+      { path: "booking", component: BookingComponent },
+    ]),
   ],
   providers: [],
-  bootstrap: [AppComponent]
-  
+  bootstrap: [AppComponent],
 })
-
-export class AppModule { }
+export class AppModule {}

@@ -33,7 +33,6 @@ const routes: Routes = [
     component: BookingComponent,
     data: { title: "Booking List" },
   },
-  
 ];
 
 // @NgModule({

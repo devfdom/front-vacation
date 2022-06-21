@@ -5,43 +5,57 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PropertiesService } from '../services/properties.service';
 
 @Component({
-  selector: 'app-properties-edit',
-  templateUrl: './properties-edit.component.html',
-  styleUrls: ['./properties-edit.component.css']
+  selector: "app-properties-edit",
+  templateUrl: "./properties-edit.component.html",
+  styleUrls: ["./properties-edit.component.css"],
 })
 export class PropertiesEditComponent implements OnInit {
-
   properties: Properties | undefined;
   propertyId: number = 1;
 
-  @Input() propertiesData: any = {properties_photo:'', properties_city: '', properties_bedrooms: 0, properties_capacity: 0, properties_pool: false, properties_garden: false, properties_description:'', properties_pricePerNight: 0,};
+  @Input() propertiesData: any = {
+    properties_photo: "",
+    properties_city: "",
+    properties_bedrooms: 0,
+    properties_capacity: 0,
+    properties_pool: false,
+    properties_garden: false,
+    properties_description: "",
+    properties_pricePerNight: 0,
+  };
 
-  constructor(public prop: PropertiesService, private route: ActivatedRoute, private router: Router) { }
+  constructor(
+    public prop: PropertiesService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.getProperty();
   }
 
-  public getProperty():void {
+  public getProperty(): void {
     this.prop.idProperty(this.propertyId).subscribe({
-      next:(response:Properties)=>{
+      next: (response: Properties) => {
         this.properties = response;
         console.log(this.properties);
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);
-      }
-    }
-    );   
+      },
+    });
   }
 
-   updateProperty(): void{
-    this.prop.updateProperty(this.propertyId, this.propertiesData).subscribe((result) => {
-       this.router.navigate(['/properties-edit/',result._id]);
-    }, (err) => {
-      console.log(err);
-    });
-   }
+  updateProperty(): void {
+    this.prop.updateProperty(this.propertyId, this.propertiesData).subscribe(
+      (result) => {
+        this.router.navigate(["/properties-edit/", result._id]);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
 } 
 
 
