@@ -2,6 +2,8 @@
 import { Booked } from "./booked";
 
 export interface Properties{
+    Date: any;
+    City: any;
     id: number;
     photo: string;
     bedrooms: number;
@@ -14,5 +16,4 @@ export interface Properties{
     booked: Booked;
 }
 
-  
- 
+

@@ -13,7 +13,7 @@
   <app-header></app-header>
 <body>
 
-  <li *ngFor="let City of propertiesList | filter : propertiesCity">
+  <li *ngFor="let City of propertiesList | filterCity : properties">
     {{City}}
   </li>
 
