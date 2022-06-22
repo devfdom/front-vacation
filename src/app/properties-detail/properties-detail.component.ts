@@ -1,8 +1,13 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Input, OnInit } from '@angular/core';
+
 import { PropertiesService }  from '../services/properties.service';
 import { Properties } from '../model/properties';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { Location } from '@angular/common';
+
+
 
 @Component({
   selector: "app-properties-detail",
@@ -10,13 +15,24 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ["./properties-detail.component.css"],
 })
 export class PropertiesDetailComponent implements OnInit {
-  properties: Properties | undefined;
-  propertyId: number = 0 ;
+  //property:Properties;
+  properties!: Properties;
+  propertiesId: string="0";
+ 
+
+  //public properties: Properties[] = [];
+
+  //added now
+  selectedProperties?: Properties;
+  onSelect(property: Properties): void {
+  this.selectedProperties = property;
+  }
 
   constructor(
     public propertyService: PropertiesService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private Location: Location
   ) {}
 
   ngOnInit(): void {
@@ -29,20 +45,47 @@ export class PropertiesDetailComponent implements OnInit {
     //     alert(error.message);
     //   },
     // });
+    
+
+    // this.route.queryParams.subscribe(params => {
+    //   this.id = params['id'];
+    // });
+
+
+    // this.propertyService.getProperty(this.route.snapshot.params['id']).subscribe(data:Property)=> this.property = {...data};
+    
+    this.propertiesId=(this.Location.path().toString().replace("/properties-details?id=",""))
     this.getProperty();
+
+    //   this.route.params.subscribe(
+    //     (params: any) => {
+    //       this.id =  params['id'];
+      
+    //     });
+    
+    //  this.properties=this.propertyService.property;
+
   }
 
-  public getProperty(): void {
-    this.propertyService.idProperty(this.propertyId).subscribe({
-      next: (response: Properties) => {
-        this.properties = response;
-        console.log(this.properties);
+  getProperty():void{
+    this.propertyService.getProperty(Number(this.propertiesId)).subscribe({
+      next: (resp: Properties)=>{
+        this.properties = resp;
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);
       },
     });
-  }
-}
 
-
+  // public getProperty(): void {
+  //   this.propertyService.idProperty(this.propertyId).subscribe({
+  //     next: (response: Properties) => {
+  //       this.properties = response;
+  //       console.log(this.properties);
+  //     },
+  //     error: (error: HttpErrorResponse) => {
+  //       alert(error.message);
+  //     },
+  //   });
+  // }
+}}

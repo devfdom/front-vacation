@@ -12,6 +12,25 @@ import { Router } from '@angular/router';
 export class PropertiesComponent implements OnInit {
   //Array to store our properties data
   public properties: Properties[] = [];
+  // currentProperty : Properties ={
+  //   id: 0,
+  //   photo: "",
+  //   bedrooms: 0,
+  //   capacity: 0,
+  //   city: 0,
+  //   garden: false,
+  //   pool: false,
+  //   description: "",
+  //   pricePerNight: 0,
+  //   booked: Booked,
+  // }; 
+
+  //added now
+  selectedProperties?: Properties;
+  onSelect(property: Properties): void {
+  this.selectedProperties = property;
+  }
+
   constructor(public propertiesService: PropertiesService, private router: Router) {}
 
   ngOnInit(): void {
@@ -24,6 +43,14 @@ export class PropertiesComponent implements OnInit {
       console.log(this.properties);
     });
   }
+
+  // getProperty(id: number):void{
+  //   this.propertiesService.getProperty(id).subscribe((resp: any)=>{
+  //     this.properties =resp ;
+  //     this.propertiesService.property =resp;
+  //     console.log(this.properties)
+  //   })
+  // }
 
   add(): void {
     this.router.navigate(["/properties-add"]);

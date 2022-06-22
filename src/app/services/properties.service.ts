@@ -1,18 +1,20 @@
-import { Properties } from './../model/properties';
-import { User } from '../model/user';
-import { Injectable } from '@angular/core';
+import { Properties } from "./../model/properties";
+import { Injectable } from "@angular/core";
 
 // Import HttpClient and add it to constructor
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import { catchError, Observable, throwError } from 'rxjs';
-import { map } from 'rxjs/operators';
-
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { environment } from "src/environments/environment";
+import { catchError, map, Observable, throwError } from "rxjs";
 
 @Injectable({
   providedIn: "root",
 })
 export class PropertiesService {
+
+  constructor(private http: HttpClient) {
+    console.log("Properties Services");
+  }
+
   private handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
       console.error("An error occurred:", error.error.message);
@@ -31,30 +33,37 @@ export class PropertiesService {
 
   private apiServerUrl = environment.apiBaseUrl;
 
-  constructor(private http: HttpClient) {
-    console.log("Properties Services");
-  }
+  public property: Properties | undefined;
 
-  getProperties(): Observable<Properties[]> {
-    return this.http.get<Properties[]>(
+
+  // getProperties(): Observable<any> {
+  //   return this.http.get(
+  //     `${this.apiServerUrl}/petvacation/properties`
+  //   ).pipe(map(this.extractData),catchError(this.handleError));
+  //   /*let header = new HttpHeaders()
+  //       .set('Type-content', 'aplication/json')
+  //     return this.http.get(this.apiServerUrl, {
+  //       headers:header});*/
+  // }
+
+  getProperties(): Observable<any> {
+    return this.http.get(
       `${this.apiServerUrl}/petvacation/properties`
-    );
+    ).pipe(catchError(this.handleError));
     /*let header = new HttpHeaders()
         .set('Type-content', 'aplication/json')
       return this.http.get(this.apiServerUrl, {
         headers:header});*/
   }
 
-  //this one and the next should do the same thing - Create a new property
-  public registerProperty(properties: Properties): Observable<Properties> {
-    return this.http.post<Properties>(
-      `${this.apiServerUrl}/petvacation/properties/create`,
-      properties
-    );
+  getProperty(id: number): Observable<any> {
+    return this.http
+      .get<Properties>(`${this.apiServerUrl}/petvacation/properties/${id}`)
+      .pipe(catchError(this.handleError));
   }
 
   public addProperty(properties: any): Observable<any> {
-    console.log(properties)
+    console.log(properties);
     return this.http
       .post<Properties>(
         `${this.apiServerUrl}/petvacation/properties/create`,
@@ -63,19 +72,26 @@ export class PropertiesService {
       .pipe(catchError(this.handleError));
   }
 
+
+
+  // //this one and the next should do the same thing - Create a new property
+  // public registerProperty(properties: Properties): Observable<Properties> {
+  //   return this.http.post<Properties>(
+  //     `${this.apiServerUrl}/petvacation/properties/create`,
+  //     properties
+  //   );
+  // }
+
+  
+
   //this one and the next should do the same thing - Find property by Id
-  public idProperty(id: number): Observable<Properties> {
-    return this.http.get<Properties>(
-      `${this.apiServerUrl}/petvacation/properties/${id}`
-    );
-  }
+  // public idProperty(id: number): Observable<Properties> {
+  //   return this.http.get<Properties>(
+  //     `${this.apiServerUrl}/petvacation/properties/${id}`
+  //   );
+  // }
 
-  getProperty(id: number): Observable<any> {
-    return this.http
-      .get(`${this.apiServerUrl}/petvacation/properties/${id}`)
-      .pipe(catchError(this.handleError));
-  }
-
+  
   //Edit property
   updateProperty(id: number, properties: Properties): Observable<any> {
     return this.http
@@ -104,4 +120,3 @@ export class PropertiesService {
       return this.http.post<User>(`${this.apiServerUrl}/petvacation/user/delete/`, user);
     }*/
 }
-
