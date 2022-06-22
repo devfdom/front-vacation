@@ -1,45 +1,49 @@
 <body>
 
-  <h1 style="text-align: center; color: #290981; font-family: 'Dancing Script', cursive; width: 100%;">Create a New Account</h1>
+  <h1 style="text-align: center; color: #290981; font-family: 'Dancing Script', cursive; width: 100%;">Create a New
+    Account</h1>
   <!-- Wrapper container -->
   <div class="container d-grid gap-5 col-4 p-3 mx-auto">
 
-      <!-- Bootstrap 5 starter form -->
-      <form #data="ngForm" (ngSubmit)="getUserData(data)" name="form"
-      (ngSubmit)="f.form.valid && onSubmit()"
-      #f="ngForm"
+    <!-- Bootstrap 5 starter form -->
+    <form #data="ngForm" (ngSubmit)="getUserData(data)" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm"
       novalidate>
-        <!-- Name input -->
-        <div class="mb-3">
-          <label class="form-label" for="name">Name</label>
-          <input class="form-control" id="name" type="text" placeholder="Name" ngModel name="name" [(ngModel)]="form.name" />
-        </div>
+      <!-- Name input -->
+      <div class="mb-3">
+        <label class="form-label" for="name">Name</label>
+        <input class="form-control" id="name" type="text" placeholder="Name" ngModel name="name"
+          [(ngModel)]="form.name">
+      </div>
 
-        <!-- Email address input -->
-        <div class="mb-3">
-          <label class="form-label" for="emailAddress">Email Address</label>
-          <input class="form-control" id="emailAddress" type="email" placeholder="EmailAddress" required ngModel name="email" [(ngModel)]="form.email" />
-        </div>
+      <!-- Email address input -->
+      <div class="mb-3">
+        <label class="form-label" for="email">Email Address</label>
+        <input class="form-control" id="emailAddress" type="email" placeholder="EmailAddress" required ngModel
+          name="email" [(ngModel)]="form.email">
+      </div>
 
-        <!-- Username input -->
-        <div class="mb-3">
-          <label class="form-label" for="username">Username</label>
-          <input class="form-control" id="username" type="text" placeholder="Username" required ngModel name="email" [(ngModel)]="form.username" />
-        </div>
+      <!-- Username input -->
+      <div class="mb-3">
+        <label class="form-label" for="username">Username</label>
+        <input class="form-control" id="username" type="text" placeholder="Username" required ngModel name="username"
+          [(ngModel)]="form.username">
+      </div>
 
-        <!-- Password -->
-        <div class="mb-3">
-          <label class="form-label" for="password">Password</label>
-          <input class="form-control" id="password" type="text" placeholder="Password" required ngModel name="password" [(ngModel)]="form.password" />
-        </div>
+      <!-- Password -->
+      <div class="mb-3">
+        <label class="form-label" for="password">Password</label>
+        <input class="form-control" id="password" type="text" placeholder="Password" required ngModel name="password"
+          [(ngModel)]="form.password">
+      </div>
 
-        <!-- Form submit button -->
-        <div class="button">
-          <div class="d-flex justify-content-center">
-            <button class="btn submit btn-md" type="button" style="height: 2.5rem; width: 12rem;" type="submit">Submit</button>
-          </div>
+      <!-- Form submit button -->
+      <div class="button">
+        <div class="d-flex justify-content-center">
+          <button class="btn submit btn-md" type="button" style="height: 2.5rem; width: 12rem;"
+            type="submit">Submit</button>
         </div>
-      </form>
+      </div>
+    </form>
 
-    </div>
-  </body>
+  </div>
+</body>

@@ -22,8 +22,9 @@ import { FooterComponent } from "./footer/footer.component";
 import { HeaderComponent } from "./header/header.component";
 
 import { FilterDatePipe } from "./filter-date.pipe";
-import { UserLoginComponent } from "./user-login/user-login.component";
-import { UserRegisterComponent } from "./user-register/user-register.component";
+import { EachadvertisementComponent } from './eachadvertisement/eachadvertisement.component';
+// import { UserLoginComponent } from "./user-login/user-login.component";
+// import { UserRegisterComponent } from "./user-register/user-register.component";
 
 @NgModule({
   declarations: [
@@ -41,8 +42,9 @@ import { UserRegisterComponent } from "./user-register/user-register.component";
     PropertiesAddComponent,
     PropertiesDetailComponent,
     PropertiesEditComponent,
-    UserRegisterComponent,
-    UserLoginComponent,
+    EachadvertisementComponent,
+    // UserRegisterComponent,
+    // UserLoginComponent,
 
     //maybe I should put the PropertiesDeteil and Edit here
   ],
@@ -51,8 +53,8 @@ import { UserRegisterComponent } from "./user-register/user-register.component";
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: "login", component: UserLoginComponent },
-      { path: "register", component: UserRegisterComponent },
+      // { path: "login", component: UserLoginComponent },
+      // { path: "register", component: UserRegisterComponent },
       { path: "contact", component: ContactComponent },
       { path: "owner", component: OwnerComponent },
       { path: "", component: HomeComponent },
@@ -62,10 +64,9 @@ import { UserRegisterComponent } from "./user-register/user-register.component";
       { path: "propertiesAdd", component: PropertiesAddComponent },
       { path: "propertiesDetail", component: PropertiesDetailComponent },
       { path: "propertiesEdit", component: PropertiesEditComponent },
-      { path: "booking", component: BookingComponent },
     ]),
   ],
-  providers: [authInterceptorProviders],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

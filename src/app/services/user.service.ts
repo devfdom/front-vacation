@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 import { catchError, Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+const API_URL = 'http://localhost:8080/pet_vacation/';
 
 @Injectable({
   providedIn: "root",
