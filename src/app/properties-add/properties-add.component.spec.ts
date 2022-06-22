@@ -2,15 +2,14 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PropertiesAddComponent } from './properties-add.component';
 
-describe('PropertiesAddComponent', () => {
+describe("PropertiesAddComponent", () => {
   let component: PropertiesAddComponent;
   let fixture: ComponentFixture<PropertiesAddComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PropertiesAddComponent ]
-    })
-    .compileComponents();
+      declarations: [PropertiesAddComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('PropertiesAddComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

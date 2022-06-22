@@ -1,32 +1,32 @@
 <div>
   <h2>Property Edit</h2>
   <div>
-    <label>City:
-      <img class="form-control" id="bedrooms" type="text" [(ngModel)]="propertiesData.property_photo" placeholder="Photo" />
+    <label>Photo:
+      <input [(ngModel)]="propertiesData.photo" class="form-control" placeholder="Photo" />
     </label><br>
     <label>City:
-      <input class="form-control" id="bedrooms" type="text" [(ngModel)]="propertiesData.property_city" placeholder="City" />
+      <input [(ngModel)]="propertiesData.city" class="form-control" placeholder="City" />
     </label><br>
     <label>Bedrooms:
-      <input  class="form-control" id="bedrooms" type="number" [(ngModel)]="propertiesData.property_bedrooms" placeholder="Bedrooms" />
+      <input [(ngModel)]="propertiesData.bedrooms" class="form-control" placeholder="Bedrooms" />
     </label><br>
     <label>Capacity:
-      <input class="form-control" id="bedrooms" type="number" [(ngModel)]="propertiesData.property_capacity" placeholder="Capacity" />
+      <input [(ngModel)]="propertiesData.capacity" class="form-control" placeholder="Capacity" />
     </label><br>
     <label>Pool:
-      <input class="form-control" id="bedrooms" type="boolean" [(ngModel)]="propertiesData.property_pool" placeholder="Yes/No" />
+      <input [(ngModel)]="propertiesData.pool" class="form-control" placeholder="Yes/No" />
     </label><br>
     <label>Garden:
-      <input class="form-control" id="bedrooms" type="boolean" [(ngModel)]="propertiesData.property_garden" placeholder="Yes/No" />
+      <input [(ngModel)]="propertiesData.garden" class="form-control" placeholder="Yes/No" />
     </label><br>
     <label>Description:
-      <input class="form-control" id="bedrooms" type="text" [(ngModel)]="propertiesData.property_description" placeholder="Deteils" />
+      <input [(ngModel)]="propertiesData.description" class="form-control" placeholder="Details" />
     </label><br>
     <label>Price Per Night:
-      <input class="form-control" id="bedrooms" type="number" [(ngModel)]="propertiesData.property_pricePerNight" placeholder="Price Per Night" />
+      <input [(ngModel)]="propertiesData.pricePerNight" class="form-control" placeholder="Price Per Night" />
     </label><br>
   </div>
-  <!--<button (click)="updateProperty()">Update</button>-->
+  <button (click)="updateProperty()">Update</button>
 </div>
 
 

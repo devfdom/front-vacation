@@ -1,23 +1,19 @@
-<!--<div class="box" *ngFor="let properties of properties">
-    <img [src]="" alt="...">
-    <p>
-        Capacity: {{properties.capacity}}
-    </p>
-    <p>
-        Bedrooms:{{properties.bedrooms}}
-    </p>
-    <p>
-        {{properties.pricePerNight}}€ (Price Per Night)
-    </p>
+<div class="box" *ngFor="let property of properties">
+  <img src="{{property?.photo}}" alt="...">
+  <p>
+    Capacity: {{property.capacity}} / Bedrooms:{{property.bedrooms}}
+  </p>
+  <p>
+    {{property.pricePerNight}}€ (Price Per Night)
+  </p>
 </div>
 
- <h2>Properties</h2>
-
 <div>
+  <p>Would you like to share a property to rent? Add it here.</p>
   <button (click)="add()">
     Add
   </button>
-</div> -->
+</div> 
 
 <!-- <ul class="prodperties">
   <li *ngFor="let p of properties; let i=index;">
@@ -28,4 +24,3 @@
       (click)="delete(p._id)">x</button>
   </li>
 </ul> -->
-

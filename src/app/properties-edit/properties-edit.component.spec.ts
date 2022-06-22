@@ -2,15 +2,14 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PropertiesEditComponent } from './properties-edit.component';
 
-describe('PropertiesEditComponent', () => {
+describe("PropertiesEditComponent", () => {
   let component: PropertiesEditComponent;
   let fixture: ComponentFixture<PropertiesEditComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PropertiesEditComponent ]
-    })
-    .compileComponents();
+      declarations: [PropertiesEditComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('PropertiesEditComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

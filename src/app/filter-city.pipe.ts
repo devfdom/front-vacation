@@ -12,7 +12,7 @@ export class FilterCityPipe implements PipeTransform {
     } else {
       return properties.filter((properties) =>
       {
-        return properties.City.toLowerCase() === filterText.toLowerCase()
+        return properties.city.toLowerCase() === filterText.toLowerCase()
       })
     }
   }

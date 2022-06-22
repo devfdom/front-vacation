@@ -25,5 +25,14 @@ export class AppComponent {
       console.log(response);
       this.properties = response;
     });
+  // title = "properties";
+  // public properties: Array<any> = [];
+
+  // constructor(private propertiesService: PropertiesService) {
+  //   /* this.propertiesService.getProperties().subscribe((response: any) => {
+  //     console.log(response);
+  //     this.properties = response;
+  //   }); */
+  // }
   }
 }

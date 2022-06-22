@@ -5,6 +5,13 @@ h1{
     font-size: 75px;
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .form-control{
     background-color: #D2BAFF;
     border: 1px;
@@ -13,6 +20,8 @@ h1{
 .btn.submit.btn-md {
     background-color: #D2BAFF;
     font-family: 'Oswald', sans-serif;
+    border-radius: 3px;
+    align-items: center;
 } 
 
 .button {

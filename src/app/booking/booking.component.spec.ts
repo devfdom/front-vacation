@@ -13,16 +13,21 @@ describe('HomeComponent', () => {
 ========
 import { BookingComponent } from './booking.component';
 
-describe('BookingComponent', () => {
+describe("BookingComponent", () => {
   let component: BookingComponent;
   let fixture: ComponentFixture<BookingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+<<<<<<< HEAD
       declarations: [ BookingComponent ]
 >>>>>>>> feature/alladvertise:src/app/booking/booking.component.spec.ts
     })
     .compileComponents();
+=======
+      declarations: [BookingComponent],
+    }).compileComponents();
+>>>>>>> feature/alladvertise
   });
 
   beforeEach(() => {
@@ -35,7 +40,7 @@ describe('BookingComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

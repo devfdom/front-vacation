@@ -3,7 +3,7 @@ import { PropertiesComponent } from "./properties/properties.component";
 import { PropertiesDetailComponent } from "./properties-detail/properties-detail.component";
 import { PropertiesAddComponent } from "./properties-add/properties-add.component";
 import { PropertiesEditComponent } from "./properties-edit/properties-edit.component";
-import { Routes } from "@angular/router";
+import { RouterModule, Routes } from "@angular/router";
 import { BookingComponent } from "./booking/booking.component";
 
 const routes: Routes = [
@@ -33,15 +33,10 @@ const routes: Routes = [
     component: BookingComponent,
     data: { title: "Booking List" },
   },
-
 ];
 
-// @NgModule({
-
-
-//   // imports: [RouterModule.forRoot(routes)],
-//   // exports: [RouterModule],
-// })
-// export class AppRoutingModule {
-
-// }
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
