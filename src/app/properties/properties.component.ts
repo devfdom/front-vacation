@@ -11,26 +11,26 @@ import { Router } from '@angular/router';
 })
 export class PropertiesComponent implements OnInit {
   //Array to store our properties data
-  public property: Properties[] = [];
-  constructor(public properties: PropertiesService, private router: Router) {}
+  public properties: Properties[] = [];
+  constructor(public propertiesService: PropertiesService, private router: Router) {}
 
   ngOnInit(): void {
     this.getProperties();
   }
 
   getProperties(): void {
-    this.properties.getProperties().subscribe((resp: any) => {
+    this.propertiesService.getProperties().subscribe((resp: any) => {
       this.properties = resp;
       console.log(this.properties);
     });
   }
 
   add(): void {
-    this.router.navigate(["/product-add"]);
+    this.router.navigate(["/properties-add"]);
   }
 
   delete(id: number): void {
-    this.properties.deleteProperty(id).subscribe(
+    this.propertiesService.deleteProperty(id).subscribe(
       () => {
         this.getProperties();
       },

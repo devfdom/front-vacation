@@ -1,13 +1,10 @@
-<div class="box" *ngFor="let properties of properties">
-  <img [src]="" alt="...">
+<div class="box" *ngFor="let property of properties">
+  <img src="{{property?.photo}}" alt="...">
   <p>
-    Capacity: {{properties.capacity}}
+    Capacity: {{property.capacity}} / Bedrooms:{{property.bedrooms}}
   </p>
   <p>
-    Bedrooms:{{properties.bedrooms}}
-  </p>
-  <p>
-    {{properties.pricePerNight}}€ (Price Per Night)
+    {{property.pricePerNight}}€ (Price Per Night)
   </p>
 </div>
 
@@ -16,7 +13,7 @@
   <button (click)="add()">
     Add
   </button>
-</div>
+</div> 
 
 <!-- <ul class="prodperties">
   <li *ngFor="let p of properties; let i=index;">

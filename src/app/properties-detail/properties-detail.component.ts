@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PropertiesDetailComponent implements OnInit {
   properties: Properties | undefined;
-  propertyId: number = 1;
+  propertyId: number = 0 ;
 
   constructor(
     public propertyService: PropertiesService,
@@ -20,16 +20,16 @@ export class PropertiesDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.propertyService.idProperty(1).subscribe({
-      next: (response: Properties) => {
-        this.properties = response;
-        console.log(this.properties);
-      },
-      error: (error: HttpErrorResponse) => {
-        alert(error.message);
-      },
-    });
-    //this.getProperty();
+    // this.propertyService.idProperty(1).subscribe({
+    //   next: (response: Properties) => {
+    //     this.properties = response;
+    //     console.log(this.properties);
+    //   },
+    //   error: (error: HttpErrorResponse) => {
+    //     alert(error.message);
+    //   },
+    // });
+    this.getProperty();
   }
 
   public getProperty(): void {

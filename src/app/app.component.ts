@@ -11,9 +11,9 @@ export class AppComponent {
   public properties: Array<any> = [];
 
   constructor(private propertiesService: PropertiesService) {
-    this.propertiesService.getProperties().subscribe((response: any) => {
+    /* this.propertiesService.getProperties().subscribe((response: any) => {
       console.log(response);
       this.properties = response;
-    });
+    }); */
   }
 }

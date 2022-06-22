@@ -11,18 +11,18 @@ import { PropertiesService } from '../services/properties.service';
 })
 export class PropertiesAddComponent implements OnInit {
   @Input() propertiesData = {
-    properties_photo: "",
-    properties_city: "",
-    properties_bedrooms: 0,
-    properties_capacity: 0,
-    properties_pool: false,
-    properties_garden: false,
-    properties_description: "",
-    properties_pricePerNight: 0,
+    photo: "",
+    city: "",
+    bedrooms: 0,
+    capacity: 0,
+    pool: false,
+    garden: false,
+    description: "",
+    pricePerNight: 0,
   };
 
   constructor(
-    public properties: PropertiesService,
+    public propertiesService: PropertiesService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
@@ -30,7 +30,8 @@ export class PropertiesAddComponent implements OnInit {
   ngOnInit(): void {}
 
   addProperty(): void {
-    this.properties.addProperty(this.propertiesData).subscribe(
+    console.log(this.propertiesData)
+    this.propertiesService.addProperty(this.propertiesData).subscribe(
       (result) => {
         this.router.navigate([`/properties-details`, result._id]);
       },

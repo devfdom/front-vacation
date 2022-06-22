@@ -54,6 +54,7 @@ export class PropertiesService {
   }
 
   public addProperty(properties: any): Observable<any> {
+    console.log(properties)
     return this.http
       .post<Properties>(
         `${this.apiServerUrl}/petvacation/properties/create`,
