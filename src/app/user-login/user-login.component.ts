@@ -32,7 +32,7 @@ export class UserLoginComponent implements OnInit {
     console.log(username);
     console.log(password);
     this.authService.login(username, password).subscribe({
-      next: data => {
+      next: (data: { access_token: any; }): void => {
         //this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveToken(data.access_token);
         this.tokenStorage.saveUser(data);

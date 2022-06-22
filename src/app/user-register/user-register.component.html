@@ -5,29 +5,32 @@
   <div class="container d-grid gap-5 col-4 p-3 mx-auto">
 
       <!-- Bootstrap 5 starter form -->
-      <form id="userForm">
+      <form #data="ngForm" (ngSubmit)="getUserData(data)" name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      novalidate>
         <!-- Name input -->
         <div class="mb-3">
           <label class="form-label" for="name">Name</label>
-          <input class="form-control" id="name" type="text" placeholder="Name" />
+          <input class="form-control" id="name" type="text" placeholder="Name" ngModel name="name" [(ngModel)]="form.name" />
         </div>
 
         <!-- Email address input -->
         <div class="mb-3">
           <label class="form-label" for="emailAddress">Email Address</label>
-          <input class="form-control" id="emailAddress" type="email" placeholder="EmailAddress" />
+          <input class="form-control" id="emailAddress" type="email" placeholder="EmailAddress" required ngModel name="email" [(ngModel)]="form.email" />
         </div>
 
         <!-- Username input -->
         <div class="mb-3">
           <label class="form-label" for="username">Username</label>
-          <input class="form-control" id="username" type="text" placeholder="Username" />
+          <input class="form-control" id="username" type="text" placeholder="Username" required ngModel name="email" [(ngModel)]="form.username" />
         </div>
 
         <!-- Password -->
         <div class="mb-3">
           <label class="form-label" for="password">Password</label>
-          <input class="form-control" id="password" type="text" placeholder="Password" />
+          <input class="form-control" id="password" type="text" placeholder="Password" required ngModel name="password" [(ngModel)]="form.password" />
         </div>
 
         <!-- Form submit button -->

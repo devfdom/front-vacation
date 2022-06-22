@@ -65,7 +65,7 @@ import { UserRegisterComponent } from "./user-register/user-register.component";
       { path: "booking", component: BookingComponent },
     ]),
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

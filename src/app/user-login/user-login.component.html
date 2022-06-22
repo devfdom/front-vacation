@@ -2,14 +2,26 @@
   <div class="container d-grid gap-5 col-4 p-3 mx-auto">
     <h1 style="text-align: center; color: #290981; font-family: 'Dancing Script', cursive; width: 100%;">Login</h1>
     <!--<div class="dropdown-menu">-->
+
     <form class="px-4 py-3" id="loginForm">
       <div class="mb-3">
         <label for="exampleDropdownFormUsername" class="form-label">Username</label>
-        <input type="username" class="form-control" id="Username" placeholder="Username">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
+        name="username"
+        [(ngModel)]="form.username"
+        required
+        #username="ngModel">
+        <!-- <input type="username" class="form-control" id="Username" placeholder="Username"> -->
       </div>
       <div class="mb-3">
         <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter password"
+                type="password"
+                class="form-control"
+                name="password"
+                [(ngModel)]="form.password"
+                required>
+        <!-- <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password"> -->
       </div>
 
       <div class="mb-3">
@@ -19,7 +31,8 @@
         </div>
         <div class="button">
           <div class="d-flex justify-content-center">
-            <button class="btn submit btn-md" style="height: 2.5rem; width: 12rem;" type="submit">Submit</button>
+                required>
+            <button class="btn submit btn-md" style="height: 2.5rem; width: 12rem;" (click)="onSubmit()" routerLink="/home" type="submit">Submit</button>
           </div>
         </div>
         <div class="dropdown-divider"></div>
