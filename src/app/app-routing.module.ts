@@ -7,6 +7,9 @@ import { RouterModule, Routes } from "@angular/router";
 import { BookingComponent } from "./booking/booking.component";
 
 const routes: Routes = [
+
+  // { path: "login", component: LoginComponent, pathMatch: "full" },
+  // { path: "register", component: RegisterComponent, pathMatch: "full" },
   {
     path: "properties",
     component: PropertiesComponent,
