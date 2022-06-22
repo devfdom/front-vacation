@@ -8,7 +8,6 @@ import { HomeComponent } from "./home/home.component";
 import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from "./app.component";
 import { OwnerComponent } from "./owner/owner.component";
-import { UserComponent } from "./user/user.component";
 
 import { FormsModule } from "@angular/forms";
 
@@ -23,6 +22,8 @@ import { FooterComponent } from "./footer/footer.component";
 import { HeaderComponent } from "./header/header.component";
 
 import { FilterDatePipe } from "./filter-date.pipe";
+import { UserLoginComponent } from "./user-login/user-login.component";
+import { UserRegisterComponent } from "./user-register/user-register.component";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,6 @@ import { FilterDatePipe } from "./filter-date.pipe";
     FooterComponent,
     ContactComponent,
     OwnerComponent,
-    UserComponent,
     HomeComponent,
     HeaderComponent,
     PropertiesComponent,
@@ -41,6 +41,8 @@ import { FilterDatePipe } from "./filter-date.pipe";
     PropertiesAddComponent,
     PropertiesDetailComponent,
     PropertiesEditComponent,
+    UserRegisterComponent,
+    UserLoginComponent,
 
     //maybe I should put the PropertiesDeteil and Edit here
   ],
@@ -49,10 +51,11 @@ import { FilterDatePipe } from "./filter-date.pipe";
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
+      { path: "login", component: UserLoginComponent },
+      { path: "register", component: UserRegisterComponent },
       { path: "contact", component: ContactComponent },
       { path: "owner", component: OwnerComponent },
       { path: "", component: HomeComponent },
-      { path: "user", component: UserComponent },
       { path: "properties", component: PropertiesComponent },
       { path: "booking", component: BookingComponent },
       { path: "properties", component: PropertiesComponent },
