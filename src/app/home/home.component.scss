@@ -13,6 +13,7 @@ body{
   border-radius: 10px;
   transition: transform .2s; /* Animation */
   border-width: 0px;
+
 }
 
 .card-group {
@@ -21,5 +22,18 @@ body{
 
 .card:hover {
   transform: scale(1.05); /* (10% zoom - Note: if the zoom is too large) */
+  opacity: 1;
+  transition: 0.5s opacity;
 }
+
+.caption {
+  position:absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+ }
+
+ .thumbnail{
+  position: relative;
+ }
 

@@ -1,3 +1,5 @@
+import { UserLoginComponent } from './user-login/user-login.component';
+import { UserRegisterComponent } from './user-register/user-register.component';
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
@@ -23,8 +25,8 @@ import { HeaderComponent } from "./header/header.component";
 
 import { FilterDatePipe } from "./filter-date.pipe";
 import { EachadvertisementComponent } from './eachadvertisement/eachadvertisement.component';
-// import { UserLoginComponent } from "./user-login/user-login.component";
-// import { UserRegisterComponent } from "./user-register/user-register.component";
+import { authInterceptorProviders } from "./helpers/auth.interceptor";
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -43,18 +45,18 @@ import { EachadvertisementComponent } from './eachadvertisement/eachadvertisemen
     PropertiesDetailComponent,
     PropertiesEditComponent,
     EachadvertisementComponent,
-    // UserRegisterComponent,
-    // UserLoginComponent,
+    UserRegisterComponent,
+    UserLoginComponent,
+    UserComponent
 
-    //maybe I should put the PropertiesDeteil and Edit here
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      // { path: "login", component: UserLoginComponent },
-      // { path: "register", component: UserRegisterComponent },
+      { path: "login", component: UserLoginComponent },
+      { path: "register", component: UserRegisterComponent },
       { path: "contact", component: ContactComponent },
       { path: "owner", component: OwnerComponent },
       { path: "", component: HomeComponent },
@@ -66,7 +68,7 @@ import { EachadvertisementComponent } from './eachadvertisement/eachadvertisemen
       { path: "rent", component: EachadvertisementComponent },
     ]),
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -2,10 +2,9 @@ import { User } from './../model/user';
 import { Injectable } from '@angular/core';
 
 // Import HttpClient and add it to constructor
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { catchError, Observable, throwError } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 const API_URL = 'http://localhost:8080/pet_vacation/';
 
@@ -36,7 +35,7 @@ export class UserService {
   }
 
   getUser(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.apiServerUrl}/petvacation/user`);
+    return this.http.get<User[]>('${this.apiServerUrl}/petvacation/user');
     /*let header = new HttpHeaders()
         .set('Type-content', 'aplication/json')
       return this.http.get(this.apiServerUrl, {
