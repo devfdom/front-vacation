@@ -14,10 +14,6 @@ export class BookingService {
       (item) => item.properties.id === properties.id
     );
 
-    // if(bookingItem){
-    //     this.changeQuantity(properties.id, bookingItem.quantity+1)
-    //     return;
-    // }
     this.booking.items.push(new BookingItem(properties));
     this.localStorageSaveBooking();
   }

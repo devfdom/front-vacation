@@ -15,14 +15,9 @@ import { Location } from '@angular/common';
   styleUrls: ["./properties-detail.component.css"],
 })
 export class PropertiesDetailComponent implements OnInit {
-  //property:Properties;
   properties!: Properties;
   propertiesId: string="0";
- 
 
-  //public properties: Properties[] = [];
-
-  //added now
   selectedProperties?: Properties;
   onSelect(property: Properties): void {
   this.selectedProperties = property;
@@ -35,36 +30,9 @@ export class PropertiesDetailComponent implements OnInit {
     private Location: Location
   ) {}
 
-  ngOnInit(): void {
-    // this.propertyService.idProperty(1).subscribe({
-    //   next: (response: Properties) => {
-    //     this.properties = response;
-    //     console.log(this.properties);
-    //   },
-    //   error: (error: HttpErrorResponse) => {
-    //     alert(error.message);
-    //   },
-    // });
-    
-
-    // this.route.queryParams.subscribe(params => {
-    //   this.id = params['id'];
-    // });
-
-
-    // this.propertyService.getProperty(this.route.snapshot.params['id']).subscribe(data:Property)=> this.property = {...data};
-    
+  ngOnInit(): void {    
     this.propertiesId=(this.Location.path().toString().replace("/properties-details?id=",""))
     this.getProperty();
-
-    //   this.route.params.subscribe(
-    //     (params: any) => {
-    //       this.id =  params['id'];
-      
-    //     });
-    
-    //  this.properties=this.propertyService.property;
-
   }
 
   getProperty():void{
@@ -76,16 +44,4 @@ export class PropertiesDetailComponent implements OnInit {
         alert(error.message);
       },
     });
-
-  // public getProperty(): void {
-  //   this.propertyService.idProperty(this.propertyId).subscribe({
-  //     next: (response: Properties) => {
-  //       this.properties = response;
-  //       console.log(this.properties);
-  //     },
-  //     error: (error: HttpErrorResponse) => {
-  //       alert(error.message);
-  //     },
-  //   });
-  // }
 }}
