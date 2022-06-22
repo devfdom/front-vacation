@@ -6,12 +6,12 @@ import { PropertiesAddComponent } from "./properties-add/properties-add.componen
 import { PropertiesEditComponent } from "./properties-edit/properties-edit.component";
 import { RouterModule, Routes } from "@angular/router";
 import { BookingComponent } from "./booking/booking.component";
-import { UserRegisterComponent } from './user-register/user-register.component';
+// import { UserRegisterComponent } from './user-register/user-register.component';
 
 const routes: Routes = [
 
   // { path: "login", component: LoginComponent, pathMatch: "full" },
-  {path: "register", component: UserRegisterComponent},
+  // {path: "register", component: UserRegisterComponent},
   {
     path: "properties",
     component: PropertiesComponent,
