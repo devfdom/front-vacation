@@ -1,36 +1,29 @@
-<h1 style="text-align: center; color: #290981; font-family: 'Dancing Script', cursive;">Share a New Property</h1>
-
-<div class="container d-grid gap-5 col-4 p-3 mx-auto">
-  <form id="ownerForm">
-
-    <div class="mb-3">Photo:
+<div class="container">
+  <div class="container">
+    <label class="">Photo:
       <input [(ngModel)]="propertiesData.photo" class="form-control" placeholder="Photo" />
-    </div><br>
-    <div>City:
+    </label><br>
+    <label>City:
       <input [(ngModel)]="propertiesData.city" class="form-control" placeholder="City" />
-    </div><br>
-    <div>Bedrooms:
+    </label><br>
+    <label>Bedrooms:
       <input [(ngModel)]="propertiesData.bedrooms" class="form-control" placeholder="Bedrooms" />
-    </div><br>
-    <div>Capacity:
+    </label><br>
+    <label>Capacity:
       <input [(ngModel)]="propertiesData.capacity" class="form-control" placeholder="Capacity" />
-    </div><br>
-    <div>Pool:
+    </label><br>
+    <label>Pool:
       <input [(ngModel)]="propertiesData.pool" class="form-control" placeholder="Yes/No" />
-    </div><br>
-    <div>Garden:
+    </label><br>
+    <label>Garden:
       <input [(ngModel)]="propertiesData.garden" class="form-control" placeholder="Yes/No" />
-    </div><br>
-    <div>Description:
+    </label><br>
+    <label>Description:
       <input [(ngModel)]="propertiesData.description" class="form-control" placeholder="Details" />
-    </div><br>
-    <div>Price Per Night:
+    </label><br>
+    <label>Price Per Night:
       <input [(ngModel)]="propertiesData.pricePerNight" class="form-control" placeholder="Price Per Night" />
-    </div><br>
-
-</form>
-<div class="button">
-  <button (click)="addProperty()" class="btn.submit btn-md">Submit</button>
-</div>
-  
+    </label><br>
+  </div>
+  <button (click)="addProperty()" class="btn.submit.btn-md">Submit</button>
 </div>

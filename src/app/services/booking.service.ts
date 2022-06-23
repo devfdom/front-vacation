@@ -9,12 +9,15 @@ import { Properties } from '../model/properties';
 })
 export class BookingService {
   public booking: Booking = new Booking();
-  http: any;
   public addToBooking(properties: Properties): void {
     let bookingItem = this.booking.items.find(
       (item) => item.properties.id === properties.id
     );
 
+    // if(bookingItem){
+    //     this.changeQuantity(properties.id, bookingItem.quantity+1)
+    //     return;
+    // }
     this.booking.items.push(new BookingItem(properties));
     this.localStorageSaveBooking();
   }
@@ -24,7 +27,6 @@ export class BookingService {
     );
     this.localStorageSaveBooking();
   }
-
   changeQuantity(propertiesId: number, quantity: number) {
     let bookingItem = this.booking.items.find(
       (item) => item.properties.id === propertiesId
@@ -33,7 +35,6 @@ export class BookingService {
     bookingItem.quantity = quantity;
     this.localStorageSaveBooking();
   }
-
   getAllBookings(): Booking {
     this.localStorageGetBooking();
     return this.booking;
@@ -44,6 +45,4 @@ export class BookingService {
   localStorageGetBooking() {
     this.booking = JSON.parse(localStorage.getItem("BookingCart") || "[]");
   }
-
- 
 }

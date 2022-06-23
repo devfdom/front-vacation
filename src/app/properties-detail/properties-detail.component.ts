@@ -16,33 +16,39 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ["./properties-detail.component.css"],
 })
 export class PropertiesDetailComponent implements OnInit {
-  properties!: Properties;
-  propertiesId: string="0";
-
-  selectedProperties?: Properties;
-  onSelect(property: Properties): void {
-  this.selectedProperties = property;
-  }
+  properties: Properties | undefined;
+  propertyId: number = 0 ;
 
   constructor(
     public propertyService: PropertiesService,
     private route: ActivatedRoute,
-    private router: Router,
-    private Location: Location
+    private router: Router
   ) {}
 
-  ngOnInit(): void {    
-    this.propertiesId=(this.Location.path().toString().replace("/properties-details?id=",""))
+  ngOnInit(): void {
+    // this.propertyService.idProperty(1).subscribe({
+    //   next: (response: Properties) => {
+    //     this.properties = response;
+    //     console.log(this.properties);
+    //   },
+    //   error: (error: HttpErrorResponse) => {
+    //     alert(error.message);
+    //   },
+    // });
     this.getProperty();
   }
 
-  getProperty():void{
-    this.propertyService.getProperty(Number(this.propertiesId)).subscribe({
-      next: (resp: Properties)=>{
-        this.properties = resp;
+  public getProperty(): void {
+    this.propertyService.idProperty(this.propertyId).subscribe({
+      next: (response: Properties) => {
+        this.properties = response;
+        console.log(this.properties);
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);
       },
     });
-}}
+  }
+}
+
+

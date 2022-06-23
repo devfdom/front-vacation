@@ -19,7 +19,7 @@ const routes: Routes = [
     data: { title: "Properties List" },
   },
   {
-    path: "properties-details",
+    path: "properties-details/:id",
     component: PropertiesDetailComponent,
     data: { title: "Properties Details" },
   },
