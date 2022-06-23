@@ -1,3 +1,4 @@
+import { CalendarComponent } from './calendar/calendar.component';
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
@@ -11,6 +12,7 @@ import { PropertiesEditComponent } from "./properties-edit/properties-edit.compo
 import { BookingComponent } from "./booking/booking.component";
 import { AppRoutingModule } from "./app-routing.module";
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,7 @@ import { AppRoutingModule } from "./app-routing.module";
     PropertiesAddComponent,
     PropertiesDetailComponent,
     PropertiesEditComponent,
-    //maybe I should put the PropertiesDeteil and Edit here
+    CalendarComponent    
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule, AppRoutingModule],
   providers: [],
