@@ -27,6 +27,7 @@ import { FilterDatePipe } from "./filter-date.pipe";
 import { EachadvertisementComponent } from './eachadvertisement/eachadvertisement.component';
 import { authInterceptorProviders } from "./helpers/auth.interceptor";
 import { UserComponent } from './user/user.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { UserComponent } from './user/user.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([
+    AppRoutingModule,
+    /* RouterModule.forRoot([
       { path: "login", component: UserLoginComponent },
       { path: "register", component: UserRegisterComponent },
       { path: "contact", component: ContactComponent },
@@ -67,7 +69,7 @@ import { UserComponent } from './user/user.component';
       { path: "propertiesDetail", component: PropertiesDetailComponent },
       { path: "propertiesEdit", component: PropertiesEditComponent },
       { path: "rent", component: EachadvertisementComponent },
-    ]),
+    ]), */
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

@@ -11,7 +11,7 @@ import { PropertiesService } from '../services/properties.service';
 export class PropertiesEditComponent implements OnInit {
 
     @Input() propertiesData: any = {
-    id: this.route.snapshot.params['id'],
+    id: null,
     photo: '',
     city: '',
     bedrooms: 0,
@@ -26,14 +26,13 @@ export class PropertiesEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.propertiesService.getProperty(this.route.snapshot.params['id']).subscribe((data: {}) => {
-      console.log(data);
       this.propertiesData = data;
     });
   }
 
   updateProperty(): void {
     console.log(this.propertiesService)
-    this.propertiesService.updateProperty(this.route.snapshot.params['id'], this.propertiesData).subscribe((result) => {
+    this.propertiesService.updateProperty(this.propertiesData).subscribe((result) => {
       this.router.navigate(['/properties-details/',result._id]);
     }, (err) => {
       console.log(err);

@@ -57,11 +57,11 @@ getProperty(id: number): Observable<any> {
 }
 
 //Edit property
-updateProperty(id: number, properties: Properties): Observable<any> {
-  return this.http
-    .put<Properties>(
-      `${this.apiServerUrl}/petvacation/properties/${id}`,
-      properties
+updateProperty(properties: Properties): Observable<any> {
+  console.log(properties);
+  
+  return this.http.put<Properties>(
+      `${this.apiServerUrl}/petvacation/properties/edit`, properties
     )
     .pipe(catchError(this.handleError));
 }
