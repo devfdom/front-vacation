@@ -1,11 +1,11 @@
-import { Properties } from './../model/properties';
-import { Injectable } from '@angular/core';
+import { Properties } from "./../model/properties";
+import { Injectable } from "@angular/core";
 
 // Import HttpClient and add it to constructor
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import { catchError, Observable, throwError } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
+import { environment } from "src/environments/environment";
 
+import { catchError, map, Observable, throwError } from "rxjs";
 
 @Injectable({
   providedIn: "root",
@@ -29,37 +29,18 @@ export class PropertiesService {
 
   private apiServerUrl = environment.apiBaseUrl;
 
-  constructor( private http: HttpClient) {
-    console.log('Properties Services')
+  constructor(private http: HttpClient) {
+    console.log("Properties Services");
   }
 
-
-    getProperties():Observable<Properties[]>{
-      return this.http.get<Properties[]>(`${this.apiServerUrl}/petvacation/properties`);
-      /*let header = new HttpHeaders()
+  getProperties(): Observable<Properties[]> {
+    return this.http.get<Properties[]>(
+      `${this.apiServerUrl}/petvacation/properties`
+    );
+    /*let header = new HttpHeaders()
         .set('Type-content', 'aplication/json')
       return this.http.get(this.apiServerUrl, {
         headers:header});*/
-    }
-
-    //this one and the next should do the same thing - Create a new property
-    //this one and the next should do the same thing - Create a new property
-
-  public registerProperty(...args: [properties: Properties]): Observable<Properties> {
-    return this.http.post<Properties>(
-      `${this.apiServerUrl}/petvacation/properties/create`,
-      properties
-    );
-  }
-
-  public addProperty(properties: any): Observable<any> {
-    console.log(properties)
-    return this.http
-      .post<Properties>(
-        `${this.apiServerUrl}/petvacation/properties/create`,
-        properties
-      )
-      .pipe(catchError(this.handleError));
   }
 
   //this one and the next should do the same thing - Find property by Id
@@ -72,6 +53,15 @@ export class PropertiesService {
   getProperty(id: number): Observable<any> {
     return this.http
       .get(`${this.apiServerUrl}/petvacation/properties/${id}`)
+      .pipe(catchError(this.handleError));
+  }
+  public addProperty(properties: any): Observable<any> {
+    console.log(properties);
+    return this.http
+      .post<Properties>(
+        `${this.apiServerUrl}/petvacation/properties/create`,
+        properties
+      )
       .pipe(catchError(this.handleError));
   }
 
@@ -95,8 +85,10 @@ export class PropertiesService {
   }
 
   /*
-    public registerUser(user:User):Observable<User>{
-      return this.http.post<Properties>(`${this.apiServerUrl}/petvacation/user/save`, user);
+  public registerUser(user:User):Observable<User>{
+    return this.http.post<Properties
+
+    >(`${this.apiServerUrl}/petvacation/user/save`, user);
     }
 
     public removeUser(user:User):Observable<User>{
@@ -105,6 +97,5 @@ export class PropertiesService {
 }
 
 function properties<T>(arg0: string, properties: any): Observable<Properties> {
-  throw new Error('Function not implemented.');
+  throw new Error("Function not implemented.");
 }
-

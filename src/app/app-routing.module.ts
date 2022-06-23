@@ -4,8 +4,9 @@ import { PropertiesComponent } from "./properties/properties.component";
 import { PropertiesDetailComponent } from "./properties-detail/properties-detail.component";
 import { PropertiesAddComponent } from "./properties-add/properties-add.component";
 import { PropertiesEditComponent } from "./properties-edit/properties-edit.component";
-import { RouterModule, Routes } from "@angular/router";
+
 import { BookingComponent } from "./booking/booking.component";
+import { RouterModule, Routes } from "@angular/router";
 // import { UserRegisterComponent } from './user-register/user-register.component';
 
 const routes: Routes = [
@@ -18,7 +19,7 @@ const routes: Routes = [
     data: { title: "Properties List" },
   },
   {
-    path: "properties-details/:id",
+    path: "properties-details",
     component: PropertiesDetailComponent,
     data: { title: "Properties Details" },
   },

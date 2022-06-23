@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+
 import { PropertiesService } from '../services/properties.service';
 
 
