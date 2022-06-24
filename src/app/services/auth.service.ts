@@ -19,15 +19,9 @@ export class AuthService {
     let cred = "username=" + username + "&password=" + password;
     console.log(username);
     console.log(password);
-    
-    
+
+
     return this.http.post(AUTH_API + 'login', cred, httpOptionsLog);
-    //  {
-    //   username,
-    //   password
-    // }, httpOptionsLog);
-    // let creds = "username=" + username + "&password=" + password;
-    // return this.http.post(AUTH_API + 'login', creds, httpOptionsLogin);
 
   }
   register(username: string, email: string, password: string): Observable<any> {

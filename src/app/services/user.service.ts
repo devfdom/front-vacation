@@ -36,10 +36,6 @@ export class UserService {
 
   getUser(): Observable<User[]> {
     return this.http.get<User[]>('${this.apiServerUrl}/petvacation/user');
-    /*let header = new HttpHeaders()
-        .set('Type-content', 'aplication/json')
-      return this.http.get(this.apiServerUrl, {
-        headers:header});*/
   }
 
   //this one and the next should do the same thing - Create a new user
@@ -80,10 +76,6 @@ export class UserService {
       .delete<User>(`${this.apiServerUrl}/petvacation/user/delete/${id}`)
       .pipe(catchError(this.handleError));
   }
-
-  /*public registerUser(user:User):Observable<User>{
-      return this.http.post<User>(`${this.apiServerUrl}/petvacation/users/save`, user);
-    }*/
 
   public removeUser(user: User): Observable<User> {
     return this.http.post<User>(
