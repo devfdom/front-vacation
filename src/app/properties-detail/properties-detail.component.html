@@ -1,0 +1,20 @@
+<div class="row">
+  
+  <div class="row">
+    <img class="img" src="{{properties?.photo}}" alt="...">
+    <h5 class="card-title">City: {{properties?.city}}</h5>
+    <h5 class="card-title">Bedrooms: {{properties?.bedrooms}}</h5>
+    <h5 class="card-title">Capacity: {{properties?.capacity}}</h5>
+    <h5 class="card-title">Swimming pool: {{properties?.pool}}</h5>
+    <h5 class="card-title">Garden: {{properties?.garden}}</h5>
+    <p class="card-text">Description: {{properties?.description}}</p>
+  </div>
+  <div class="btns">
+    <button class="button-addon2" routerLink="/properties-edit/{{properties?.id}}">
+      Edit
+    </button>
+    <button class="button-addon2" routerLink="/properties-book/{{properties?.id}}">
+      Book
+    </button>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<h1 style="text-align: center; color: #290981; font-family: 'Dancing Script', cursive; width: 100%;">Create a new
+  account</h1>
+
+<div class="container d-grid gap-5 col-4 p-3 mx-auto">
+  <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="name" class="form-control" name="name" [(ngModel)]="form.email" required email #email="ngModel" />
+      <div class="alert-danger" *ngIf="email.errors && f.submitted">
+        <div *ngIf="email.errors['required']">Name is required</div>
+        <div *ngIf="email.errors['email']">
+          Email must be a valid email address
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required minlength="3"
+        maxlength="20" #username="ngModel" />
+      <div class="alert-danger" *ngIf="username.errors && f.submitted">
+        <div *ngIf="username.errors['required']">Username is required</div>
+        <div *ngIf="username.errors['minlength']">
+          Username must be at least 3 characters
+        </div>
+        <div *ngIf="username.errors['maxlength']">
+          Username must be at most 20 characters
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email #email="ngModel" />
+      <div class="alert-danger" *ngIf="email.errors && f.submitted">
+        <div *ngIf="email.errors['required']">Email is required</div>
+        <div *ngIf="email.errors['email']">
+          Email must be a valid email address
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6"
+        #password="ngModel" />
+      <div class="alert-danger" *ngIf="password.errors && f.submitted">
+        <div *ngIf="password.errors['required']">Password is required</div>
+        <div *ngIf="password.errors['minlength']">
+          Password must be at least 6 characters
+        </div>
+      </div>
+    </div>
+    <div class="button">
+      <div class="d-flex justify-content-center">
+        <button class="btn submit btn-md" type="button" style="height: 2.5rem; width: 12rem;" type="submit">Submit</button>
+      </div>
+    </div>
+    <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+      Signup failed!<br />{{ errorMessage }}
+    </div>
+  </form>
+  <div class="alert alert-success" *ngIf="isSuccessful">
+    Your registration is successful!
+  </div>
+</div>
