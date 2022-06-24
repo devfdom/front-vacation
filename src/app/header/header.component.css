@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 .button{
-  background-color: rgb(187, 147, 224);
+  background-color: #d2baff;
   border-radius: 10px;
-  border-color: rgb(187, 147, 224);
+  border-color: #d2baff;
   width: auto;
   font-size: 20px;
 }

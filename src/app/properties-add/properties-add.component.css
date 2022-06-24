@@ -15,29 +15,14 @@ h1{
 }
 
 .btn.submit.btn-md {
-    margin: 1em;
     background-color: #D2BAFF;
     font-family: 'Oswald', sans-serif;
     cursor: pointer;
 }
 
-.button {
-    margin-top: 2.5em;
-    background-color: #D2BAFF;
-    font-family: 'Oswald', sans-serif;
-    /* padding: 3em 1em; */
-    cursor: pointer;
-    border-radius: 10px;
-    text-align: center;
-}
 
-#loginForm{
+#addForm{
     font-family: 'Oswald', sans-serif;
-}
-
-h5{
-  text-align: center;
-  margin-top: 0.8em;
 }
 
 .form-group{

@@ -1,22 +1,25 @@
-<div class="container">
-  <div class="col" id="properties" *ngFor="let property of properties">
-    <ul>
-      <a href="/properties-details?id={{property?.id}}"> <img src="{{property?.photo}}" alt="..." class="img"></a>
-      <p>
-        Capacity: {{property.capacity}} / Bedrooms:{{property.bedrooms}}
-      </p>
-      <p>
-        {{property.pricePerNight}}€ (Price Per Night)
-      </p>
-    </ul>
+<body>
+  <h1 style="text-align: center; color: #290981; font-family: 'Dancing Script', cursive; width: 100%;">My Bookings</h1>
+
+  <div class="container">
+    <div class="col" id="properties" *ngFor="let property of properties">
+      <ul>
+        <a href="/properties-details?id={{property?.id}}"> <img src="{{property?.photo}}" alt="..." class="img"></a>
+        <p class="details">
+          Capacity: {{property.capacity}} / Bedrooms:{{property.bedrooms}}
+        </p>
+        <p class="details">
+          {{property.pricePerNight}}€ (Price Per Night)
+        </p>
+      </ul>
+    </div>
   </div>
-</div>
+  <div class="button">
+    <p>Would you like to share a property to rent? Add it here.</p>
+    <div class="d-flex justify-content-center">
+      <button class="btn submit btn-md" (click)="add()" style="height: 2.5rem; width: 12rem;">Add</button>
+    </div>
+  </div>
 
-<div class="card">
-  <p>Would you like to share a property to rent? Add it here.</p>
-  <button (click)="add()">
-    Add
-  </button>
-</div>
 
-  
+</body>
