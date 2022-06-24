@@ -1,20 +1,22 @@
-<div class="box" *ngFor="let property of properties">
-  <a href="/properties-details?id={{property?.id}}"> <img src="{{property?.photo}}" alt="..."></a>
-
-  <button [class.selected]="property === selectedProperties" type="button" (click)="onSelect(property)">
-    <span class="badge">{{property.id}}</span>
-  </button>
-  <p>
-    Capacity: {{property.capacity}} / Bedrooms:{{property.bedrooms}}
-  </p>
-  <p>
-    {{property.pricePerNight}}€ (Price Per Night)
-  </p>
+<div class="container">
+  <div class="col" id="properties" *ngFor="let property of properties">
+    <ul>
+      <a href="/properties-details?id={{property?.id}}"> <img src="{{property?.photo}}" alt="..." class="img"></a>
+      <p>
+        Capacity: {{property.capacity}} / Bedrooms:{{property.bedrooms}}
+      </p>
+      <p>
+        {{property.pricePerNight}}€ (Price Per Night)
+      </p>
+    </ul>
+  </div>
 </div>
 
-<div>
+<div class="card">
   <p>Would you like to share a property to rent? Add it here.</p>
   <button (click)="add()">
     Add
   </button>
-</div> 
+</div>
+
+  

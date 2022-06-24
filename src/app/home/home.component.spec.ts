@@ -1,38 +1,38 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { from } from 'rxjs';
+import { BookingComponent } from '../booking/booking.component';
 
-<<<<<<<< HEAD:src/app/home/home.component.spec.ts
 import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
+  let components: BookingComponent;
+  let fixtures: ComponentFixture<BookingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
-========
-import { BookingComponent } from './booking.component';
-
-describe('BookingComponent', () => {
-  let component: BookingComponent;
-  let fixture: ComponentFixture<BookingComponent>;
-
+      declarations: [HomeComponent],
+    }).compileComponents();
+  });
+  
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BookingComponent ]
->>>>>>>> feature/alladvertise:src/app/booking/booking.component.spec.ts
+      declarations: [BookingComponent]
     })
-    .compileComponents();
+      .compileComponents()
   });
 
   beforeEach(() => {
-<<<<<<<< HEAD:src/app/home/home.component.spec.ts
     fixture = TestBed.createComponent(HomeComponent);
-========
-    fixture = TestBed.createComponent(BookingComponent);
->>>>>>>> feature/alladvertise:src/app/booking/booking.component.spec.ts
+
+    fixtures = TestBed.createComponent(BookingComponent);
+  
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    components = fixtures.componentInstance;
+    fixtures.detectChanges();
   });
 
   it('should create', () => {

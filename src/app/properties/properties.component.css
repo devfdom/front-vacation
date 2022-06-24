@@ -1,7 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap');
 
 *{
   background-color: #B6F9ED;
-  font-family: 'Oswald', sans-serif;
 }
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 7%;
+  justify-content: space-around;    
+}
+
+
+.card {
+ display: grid;
+ 
+  justify-content: space-around;    
+
+  border-radius: 10px;
+  transition: transform .2s; /* Animation */
+  border-width: 0px;
+  margin: 7%;
+
+}
+
+.card:hover {
+  transform: scale(1.05); /* (10% zoom - Note: if the zoom is too large) */
+  opacity: 1;
+  transition: 0.5s opacity;
+}
+
+.caption {
+  position:absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+ }
+
+
+ .img{
+ 
+  width: 350px;
+  height: 300px;
+  border-radius: 10%;
+  margin: none;
+ }

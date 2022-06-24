@@ -28,6 +28,7 @@ import { EachadvertisementComponent } from './eachadvertisement/eachadvertisemen
 import { authInterceptorProviders } from "./helpers/auth.interceptor";
 import { UserComponent } from './user/user.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LogoutComponent } from './logout/logout.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { AppRoutingModule } from './app-routing.module';
     EachadvertisementComponent,
     UserRegisterComponent,
     UserLoginComponent,
-    UserComponent
+    UserComponent,
+    LogoutComponent
 
   ],
   imports: [

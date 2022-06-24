@@ -1,3 +1,4 @@
+import { UserLoginComponent } from './user-login/user-login.component';
 
 import { NgModule } from "@angular/core";
 import { PropertiesComponent } from "./properties/properties.component";
@@ -7,12 +8,17 @@ import { PropertiesEditComponent } from "./properties-edit/properties-edit.compo
 
 import { BookingComponent } from "./booking/booking.component";
 import { RouterModule, Routes } from "@angular/router";
-// import { UserRegisterComponent } from './user-register/user-register.component';
+import { UserRegisterComponent } from "./user-register/user-register.component";
+import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
+
 
 const routes: Routes = [
 
-  // { path: "login", component: LoginComponent, pathMatch: "full" },
-  // {path: "register", component: UserRegisterComponent},
+  { path: "login", component: UserLoginComponent, pathMatch: "full" },
+  {path: "register", component: UserRegisterComponent},
+  { path: "", component: HomeComponent },
+  { path: "contact", component: ContactComponent },
   {
     path: "properties",
     component: PropertiesComponent,

@@ -24,9 +24,13 @@ export class UserLoginComponent implements OnInit {
   }
   onSubmit(): void {
     const { username, password } = this.form;
-    this.authService.login(username, password).subscribe({
+    console.log(username.replace("username",""));
+    console.log(password.replace("password",""));
+    
+    
+    this.authService.login(username.replace("username",""), password.replace("password","")).subscribe({
       next: data => {
-        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveToken(data.access_token);
         this.tokenStorage.saveUser(data);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
